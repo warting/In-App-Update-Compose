@@ -1,0 +1,15 @@
+public final class se/warting/inappupdate/BuildConfig {
+	public static final field BUILD_TYPE Ljava/lang/String;
+	public static final field DEBUG Z
+	public static final field LIBRARY_PACKAGE_NAME Ljava/lang/String;
+	public fun <init> ()V
+}
+
+public abstract interface class se/warting/inappupdate/compose/InAppUpdateState {
+	public abstract fun getAppUpdateResult ()Lcom/google/android/play/core/ktx/AppUpdateResult;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateStateKt {
+	public static final fun rememberInAppUpdateState (Landroidx/compose/runtime/Composer;I)Lse/warting/inappupdate/compose/InAppUpdateState;
+}
+
