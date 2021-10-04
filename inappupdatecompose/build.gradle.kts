@@ -103,7 +103,7 @@ dependencies {
     implementation("androidx.compose.ui:ui:$composeVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
 
-    implementation(platform("com.google.android.play:core:1.6.4"))
+    implementation(platform("com.google.android.play:core:1.10.2"))
     implementation("androidx.core:core-ktx:1.6.0")
     implementation("androidx.appcompat:appcompat:1.3.1")
     implementation("com.google.android.material:material:1.4.0")
