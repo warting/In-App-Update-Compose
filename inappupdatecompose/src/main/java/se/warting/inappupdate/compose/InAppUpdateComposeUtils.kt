@@ -31,7 +31,6 @@ import android.content.ContextWrapper
 /**
  * Find the closest Activity in a given Context.
  */
-@Suppress("unused")
 internal fun Context.findActivity(): Activity {
     var context = this
     while (context is ContextWrapper) {
