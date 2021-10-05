@@ -93,15 +93,18 @@ kotlin {
 
 dependencies {
 
-    val composeVersion = "1.0.3"
-    val coroutineVersion = "1.5.2"
 
     api("com.google.android.play:core-ktx:1.8.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
 
+    val coroutineVersion = "1.5.2"
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
+
+    val composeVersion = "1.0.3"
     implementation("androidx.compose.runtime:runtime:$composeVersion")
     implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
+    implementation("androidx.compose.material:material:$composeVersion")
 
     implementation(platform("com.google.android.play:core:1.6.4"))
     implementation("androidx.core:core-ktx:1.6.0")

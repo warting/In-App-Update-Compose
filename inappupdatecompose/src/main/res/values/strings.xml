@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ MIT License
   ~
   ~ Copyright (c) 2021 Stefan Wärting
@@ -23,31 +22,17 @@
   ~ SOFTWARE.
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="se.warting.appupdatecompose">
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Update required</string>
+    <string name="in_app_update_compose_update_required_body">This app need to be update.</string>
+    <string name="in_app_update_compose_update_required_button">Update</string>
 
-    <application
-        android:allowBackup="false"
-        android:extractNativeLibs="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MaterialComponents.DayNight"
-        tools:ignore="UnusedAttribute">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+    <string name="in_app_update_compose_update_progress_title">Downloading</string>
+    <string name="in_app_update_compose_update_progress_body">Downloading update…</string>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".UiActivity" android:exported="true" />
-    </application>
-
-</manifest>
+    <string name="in_app_update_compose_update_complete_title">Update ready</string>
+    <string name="in_app_update_compose_update_complete_body">Update is ready to be installed</string>
+    <string name="in_app_update_compose_update_complete_button">Install</string>
+</resources>
