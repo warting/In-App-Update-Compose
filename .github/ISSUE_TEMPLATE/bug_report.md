@@ -1,7 +1,9 @@
 ---
-name: Bug report about: Create a report to help us improve title: ''
+name: Bug report
+about: Create a report to help us improve
+title: ''
 labels: ''
-assignees: warting
+assignees: ''
 
 ---
 
@@ -10,7 +12,6 @@ A clear and concise description of what the bug is.
 
 **To Reproduce**
 Steps to reproduce the behavior:
-
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
@@ -23,10 +24,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Smartphone (please complete the following information):**
-
-- Device: [e.g. Pixel 5a]
-- OS: [e.g. 12]
-- Version [e.g. 22]
+ - Device: [e.g. Google Pixel 5A]
+ - OS: [e.g. android 12]
+ - Library Version [e.g. v0.0.1]
 
 **Additional context**
 Add any other context about the problem here.

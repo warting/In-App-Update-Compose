@@ -27,8 +27,19 @@ dependencies {
 
 ## How to use
 
-All you need to do is to call `rememberInAppUpdateState` and check the state:
+All you need to do is to use `RequireLatestVersion`:
+```
+@Composable
+fun MainView() {
+    RequireLatestVersion {
+        Welcome()
+    }
+}
+```
+For a full implementation
+see: [Full sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
 
+or if you want more granular control:
 ```
 @Composable
 fun InAppUpdate() {
