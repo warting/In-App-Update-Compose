@@ -22,7 +22,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+plugins {
+    id("com.gradle.enterprise") version "3.4.1"
+}
+
+buildCache {
+    local {
+        isEnabled = true
+        directory = File(rootDir, "build-cache")
+        removeUnusedEntriesAfterDays = 30
+    }
+    remote<HttpBuildCache> {
+        isEnabled = false
+    }
+}
 
 rootProject.name = "In-app Update Compose"
-include ':app'
-include ':inappupdatecompose'
+include(":app")
+include(":inappupdatecompose")
