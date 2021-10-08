@@ -58,7 +58,7 @@ afterEvaluate {
                     licenses {
                         license {
                             name = 'MIT License'
-                            url = 'https://github.com/warting/in-app-updates-compose/blob/main/LICENSE'
+                            url = 'https://opensource.org/licenses/MIT'
                         }
                     }
                     developers {
