@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Je vyžadována aktualizace</string>
+    <string name="in_app_update_compose_update_required_body">Tato aplikace musí být aktualizována.</string>
+    <string name="in_app_update_compose_update_required_button">Aktualizovat</string>
+    <string name="in_app_update_compose_update_progress_title">Stahování</string>
+    <string name="in_app_update_compose_update_progress_body">Stahování aktualizace…</string>
+    <string name="in_app_update_compose_update_complete_title">Aktualizace je připravena</string>
+    <string name="in_app_update_compose_update_complete_body">Aktualizace je připravena k instalaci</string>
+    <string name="in_app_update_compose_update_complete_button">Instalovat</string>
+</resources>

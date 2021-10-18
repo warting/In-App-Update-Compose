@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Päivitys vaaditaan</string>
+    <string name="in_app_update_compose_update_required_body">Tämän sovelluksen on oltava päivitetty.</string>
+    <string name="in_app_update_compose_update_required_button">Päivitä</string>
+    <string name="in_app_update_compose_update_progress_title">Ladataan</string>
+    <string name="in_app_update_compose_update_progress_body">Ladataan päivitystä…</string>
+    <string name="in_app_update_compose_update_complete_title">Päivitys valmis</string>
+    <string name="in_app_update_compose_update_complete_body">Päivitys on valmis asennettavaksi</string>
+    <string name="in_app_update_compose_update_complete_button">Asenna</string>
+</resources>

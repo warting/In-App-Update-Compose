@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Необхідне оновлення</string>
+    <string name="in_app_update_compose_update_required_body">Цей додаток необхідно оновити.</string>
+    <string name="in_app_update_compose_update_required_button">Оновити</string>
+    <string name="in_app_update_compose_update_progress_title">Завантажується</string>
+    <string name="in_app_update_compose_update_progress_body">Завантаження оновлення…</string>
+    <string name="in_app_update_compose_update_complete_title">Оновлення готове</string>
+    <string name="in_app_update_compose_update_complete_body">Оновлення готове до встановлення</string>
+    <string name="in_app_update_compose_update_complete_button">Інсталювати</string>
+</resources>

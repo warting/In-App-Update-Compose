@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">更新が必要です</string>
+    <string name="in_app_update_compose_update_required_body">このアプリはアップデートする必要があります。</string>
+    <string name="in_app_update_compose_update_required_button">更新</string>
+    <string name="in_app_update_compose_update_progress_title">ダウンロード中</string>
+    <string name="in_app_update_compose_update_progress_body">アップデートをダウンロード中…</string>
+    <string name="in_app_update_compose_update_complete_title">更新の準備ができました</string>
+    <string name="in_app_update_compose_update_complete_body">アップデートをインストールする準備ができました</string>
+    <string name="in_app_update_compose_update_complete_button">インストール</string>
+</resources>

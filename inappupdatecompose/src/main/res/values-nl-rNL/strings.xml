@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Update vereist</string>
+    <string name="in_app_update_compose_update_required_body">Deze app moet worden bijgewerkt.</string>
+    <string name="in_app_update_compose_update_required_button">Vernieuwen</string>
+    <string name="in_app_update_compose_update_progress_title">Downloaden</string>
+    <string name="in_app_update_compose_update_progress_body">Update downloaden…</string>
+    <string name="in_app_update_compose_update_complete_title">Update klaar</string>
+    <string name="in_app_update_compose_update_complete_body">Update is klaar om te worden geïnstalleerd</string>
+    <string name="in_app_update_compose_update_complete_button">Installeren</string>
+</resources>

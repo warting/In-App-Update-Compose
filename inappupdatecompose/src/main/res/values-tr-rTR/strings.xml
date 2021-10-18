@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- this strings needs to be evaluated by community, what default strings do we want? -->
+<!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
+<resources>
+    <string name="in_app_update_compose_update_required_title">Güncelleştirme gerekli</string>
+    <string name="in_app_update_compose_update_required_body">Bu uygulamanın güncellenmesi gerekiyor.</string>
+    <string name="in_app_update_compose_update_required_button">Güncelleme</string>
+    <string name="in_app_update_compose_update_progress_title">indiriliyor</string>
+    <string name="in_app_update_compose_update_progress_body">…güncellemesi indiriliyor</string>
+    <string name="in_app_update_compose_update_complete_title">Güncelleme hazır</string>
+    <string name="in_app_update_compose_update_complete_body">Güncelleme yüklenmeye hazır</string>
+    <string name="in_app_update_compose_update_complete_button">Düzenlemek</string>
+</resources>
