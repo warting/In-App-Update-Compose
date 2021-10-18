@@ -2,12 +2,12 @@
 <!-- this strings needs to be evaluated by community, what default strings do we want? -->
 <!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
 <resources>
-    <string name="in_app_update_compose_update_required_title">Update required</string>
-    <string name="in_app_update_compose_update_required_body">This app need to be update.</string>
-    <string name="in_app_update_compose_update_required_button">Update</string>
-    <string name="in_app_update_compose_update_progress_title">Downloading</string>
-    <string name="in_app_update_compose_update_progress_body">Downloading update…</string>
-    <string name="in_app_update_compose_update_complete_title">Update ready</string>
-    <string name="in_app_update_compose_update_complete_body">Update is ready to be installed</string>
-    <string name="in_app_update_compose_update_complete_button">Install</string>
+    <string name="in_app_update_compose_update_required_title">Mise à jour requise</string>
+    <string name="in_app_update_compose_update_required_body">Cette application doit être mise à jour.</string>
+    <string name="in_app_update_compose_update_required_button">Mise à jour</string>
+    <string name="in_app_update_compose_update_progress_title">Téléchargement en cours</string>
+    <string name="in_app_update_compose_update_progress_body">Téléchargement de la mise à jour…</string>
+    <string name="in_app_update_compose_update_complete_title">Mise à jour prête</string>
+    <string name="in_app_update_compose_update_complete_body">La mise à jour est prête à être installée</string>
+    <string name="in_app_update_compose_update_complete_button">Installer</string>
 </resources>
