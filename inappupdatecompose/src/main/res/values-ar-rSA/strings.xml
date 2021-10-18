@@ -2,12 +2,12 @@
 <!-- this strings needs to be evaluated by community, what default strings do we want? -->
 <!-- Any feedback is welcome here: https://github.com/warting/In-App-Update-Compose/discussions/7 -->
 <resources>
-    <string name="in_app_update_compose_update_required_title">Update required</string>
-    <string name="in_app_update_compose_update_required_body">This app need to be update.</string>
-    <string name="in_app_update_compose_update_required_button">Update</string>
-    <string name="in_app_update_compose_update_progress_title">Downloading</string>
-    <string name="in_app_update_compose_update_progress_body">Downloading update…</string>
-    <string name="in_app_update_compose_update_complete_title">Update ready</string>
-    <string name="in_app_update_compose_update_complete_body">Update is ready to be installed</string>
-    <string name="in_app_update_compose_update_complete_button">Install</string>
+    <string name="in_app_update_compose_update_required_title">التحديث مطلوب</string>
+    <string name="in_app_update_compose_update_required_body">هذا التطبيق بحاجة إلى تحديث.</string>
+    <string name="in_app_update_compose_update_required_button">تحديث</string>
+    <string name="in_app_update_compose_update_progress_title">تنزيل</string>
+    <string name="in_app_update_compose_update_progress_body">جارٍ تنزيل التحديث…</string>
+    <string name="in_app_update_compose_update_complete_title">التحديث جاهز</string>
+    <string name="in_app_update_compose_update_complete_body">التحديث جاهز ليتم تثبيته</string>
+    <string name="in_app_update_compose_update_complete_button">تثبيت</string>
 </resources>
