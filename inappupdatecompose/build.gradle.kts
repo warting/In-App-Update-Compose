@@ -50,9 +50,16 @@ android {
     }
 
     lint {
-        lintConfig = file("$rootDir/config/lint/lint.xml")
-        lintConfig = file("$rootDir/config/lint/lint.xml")
-        //baseline(file("lint-baseline.xml"))
+        baseline(file("lint-baseline.xml"))
+        isCheckReleaseBuilds = true
+        isCheckAllWarnings = true
+        isWarningsAsErrors = true
+        isAbortOnError = true
+        disable.add("LintBaseline")
+        disable.add("GradleDependency")
+        isCheckDependencies = true
+        isCheckGeneratedSources = false
+        sarifOutput = file("../lint-results-inappupdatecompose.sarif")
     }
 }
 
