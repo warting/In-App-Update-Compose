@@ -8,7 +8,7 @@ updates:
       timezone: "Europe/Stockholm"
     open-pull-requests-limit: 40
   - package-ecosystem: "github-actions"
-    directory: ""
+    directory: "/"
     schedule:
       interval: "daily"
       time: "05:00"
