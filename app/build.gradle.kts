@@ -65,7 +65,7 @@ android {
 
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.2")
-    val composeVersion = "1.0.5"
+
     implementation("androidx.core:core-ktx:1.7.0")
     implementation(project(":inappupdatecompose"))
     implementation("androidx.appcompat:appcompat:1.4.0")
