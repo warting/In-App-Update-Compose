@@ -3,6 +3,8 @@ plugins {
     id("kotlin-android")
 }
 
+val composeVersion = "1.1.0-beta04"
+
 android {
     compileSdk = 31
 
@@ -43,7 +45,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.0.3"
+        kotlinCompilerExtensionVersion = composeVersion
     }
 
     lint {
