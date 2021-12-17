@@ -16,7 +16,6 @@ jobs:
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Enable auto-merge for Dependabot PRs
-        if: ${{steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch'}}
         run: |
           echo ${{secrets.AUTO_MERGE_TOKEN}} | gh auth login --with-token
           gh pr merge --auto --rebase --delete-branch "$PR_URL"
