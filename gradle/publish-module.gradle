@@ -70,8 +70,8 @@ afterEvaluate {
                     }
 
                     scm {
-                        connection = 'scm:git@github.com:wartiong/in-app-updates-compose.git'
-                        developerConnection = 'scm:git:ssh://github.com/wartiong/in-app-updates-compose.git'
+                        connection = 'scm:git@github.com:warting/in-app-updates-compose.git'
+                        developerConnection = 'scm:git:ssh://github.com/warting/in-app-updates-compose.git'
                         url = 'https://github.com/warting/in-app-updates-compose/tree/main'
                     }
                 }
