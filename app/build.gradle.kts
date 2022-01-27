@@ -9,11 +9,11 @@ android {
     compileSdk = 31
 
     defaultConfig {
-        applicationId = "se.warting.inappupdate"
+        applicationId = "se.premex.byggappen"
         minSdk = 21
         targetSdk = 31
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.0.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
