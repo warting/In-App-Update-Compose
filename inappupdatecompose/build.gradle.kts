@@ -13,7 +13,7 @@ val PUBLISH_VERSION: String by extra(rootProject.version as String)
 val PUBLISH_ARTIFACT_ID by extra("in-app-update-compose")
 
 apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
-val composeVersion = "1.2.0-alpha04"
+val composeVersion = "1.2.0-alpha05"
 android {
     compileSdk = 31
 
