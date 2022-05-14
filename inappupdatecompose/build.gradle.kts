@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("maven-publish")
     id("signing")
-    id("org.jetbrains.dokka") version "1.6.10"
+    id("org.jetbrains.dokka") version "1.6.20"
 }
 
 
@@ -13,7 +13,7 @@ val PUBLISH_VERSION: String by extra(rootProject.version as String)
 val PUBLISH_ARTIFACT_ID by extra("in-app-update-compose")
 
 apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
-val composeVersion = "1.1.0-rc01"
+val composeVersion = "1.2.0-alpha07"
 android {
     compileSdk = 31
 
@@ -74,7 +74,7 @@ dependencies {
 
     api("com.google.android.play:core-ktx:1.8.1")
 
-    val coroutineVersion = "1.6.0"
+    val coroutineVersion = "1.6.1"
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
