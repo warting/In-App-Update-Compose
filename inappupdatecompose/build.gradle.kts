@@ -78,7 +78,7 @@ dependencies {
 
     api("com.google.android.play:core-ktx:1.8.1")
 
-    val coroutineVersion = "1.6.1"
+    val coroutineVersion = "1.6.4"
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
