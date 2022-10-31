@@ -3,7 +3,7 @@ plugins {
     id("kotlin-android")
     id("maven-publish")
     id("signing")
-    id("org.jetbrains.dokka") version "1.7.0"
+    id("org.jetbrains.dokka") version "1.7.20"
 }
 
 
@@ -13,7 +13,7 @@ val PUBLISH_VERSION: String by extra(rootProject.version as String)
 val PUBLISH_ARTIFACT_ID by extra("in-app-update-compose")
 
 apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
-val composeVersion = "1.2.0-beta02"
+
 android {
     compileSdk = 33
 
@@ -38,7 +38,7 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = composeVersion
+        kotlinCompilerExtensionVersion = "1.3.2"
     }
 
     kotlinOptions {
@@ -61,6 +61,7 @@ android {
         checkGeneratedSources = false
         sarifOutput = file("../lint-results-inappupdatecompose.sarif")
     }
+    namespace = "se.warting.inappupdate"
 }
 
 kotlin {
@@ -71,6 +72,9 @@ kotlin {
 
 dependencies {
 
+    val composeBom = platform("androidx.compose:compose-bom:2022.10.00")
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
 
     api("com.google.android.play:core-ktx:1.8.1")
 
@@ -79,15 +83,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
 
-    val composeVersion = "1.0.5"
-    implementation("androidx.compose.runtime:runtime:$composeVersion")
-    implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.material:material:$composeVersion")
+    implementation("androidx.compose.runtime:runtime")
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.material:material")
 
     implementation(platform("com.google.android.play:core:1.10.3"))
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.6.1")
+    implementation("com.google.android.material:material:1.7.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
