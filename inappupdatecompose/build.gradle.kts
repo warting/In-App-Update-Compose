@@ -87,7 +87,7 @@ dependencies {
     implementation("androidx.compose.material:material")
 
     implementation(platform("com.google.android.play:core:1.10.3"))
-    implementation("androidx.core:core-ktx:1.9.0")
+    implementation("androidx.core:core-ktx:1.10.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
     testImplementation("junit:junit:4.13.2")
