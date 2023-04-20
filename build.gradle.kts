@@ -8,7 +8,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.0.0-alpha08")
+        classpath("com.android.tools.build:gradle:8.1.0-alpha11")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
         classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
         // NOTE: Do not place your application dependencies here; they belong
