@@ -1,18 +1,56 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id("com.android.library")
     id("kotlin-android")
     id("maven-publish")
     id("signing")
     id("org.jetbrains.dokka") version "1.8.20"
+    id("com.vanniktech.maven.publish") version "0.27.0"
 }
 
 
 
-val PUBLISH_GROUP_ID: String by extra("se.warting.in-app-update")
-val PUBLISH_VERSION: String by extra(rootProject.version as String)
-val PUBLISH_ARTIFACT_ID by extra("in-app-update-compose")
 
-apply(from = "${rootProject.projectDir}/gradle/publish-module.gradle")
+mavenPublishing {
+
+    publishToMavenCentral(SonatypeHost.DEFAULT)
+    signAllPublications()
+
+    pom {
+        name.set("In App Update Compose")
+        description.set("In-App update compose")
+        inceptionYear.set("2021")
+        url.set("https://github.com/warting/In-App-Update-Compose/")
+        licenses {
+            license {
+                name.set("MIT License")
+                url.set("https://opensource.org/licenses/MIT")
+                distribution.set("https://opensource.org/licenses/MIT")
+            }
+        }
+        developers {
+            developer {
+                id.set("warting")
+                name.set("Stefan Wärting")
+                url.set("https://github.com/warting/")
+            }
+        }
+        scm {
+            url.set("https://github.com/warting/In-App-Update-Compose/")
+            connection.set("scm:git:git://github.com/warting/In-App-Update-Compose.git")
+            developerConnection.set("scm:git:ssh://git@github.com/warting/In-App-Update-Compose.git")
+        }
+    }
+}
+
+val PUBLISH_GROUP_ID: String by extra(rootProject.group as String)
+val PUBLISH_VERSION: String by extra(rootProject.version as String)
+val PUBLISH_ARTIFACT_ID by extra("flow")
+
+group = PUBLISH_GROUP_ID
+version = PUBLISH_VERSION
+
 
 android {
     compileSdk = 33

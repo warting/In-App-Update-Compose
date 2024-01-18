@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("se.warting.inappupdatecompose.test", appContext.packageName)
+        assertEquals("se.warting.in-app-update-compose.test", appContext.packageName)
     }
 }

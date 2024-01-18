@@ -2,8 +2,8 @@ project_id: '481021'
 base_path: /
 base_url: 'https://api.crowdin.com'
 files:
-  - source: /inappupdatecompose/src/main/res/values/strings.xml
-    translation: /inappupdatecompose/src/main/res/values-%android_code%/%original_file_name%
+  - source: /in-app-update-compose/src/main/res/values/strings.xml
+    translation: /in-app-update-compose/src/main/res/values-%android_code%/%original_file_name%
     languages_mapping:
       android_code:
         de: de
