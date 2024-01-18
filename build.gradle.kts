@@ -33,6 +33,7 @@ val gitOrLocalVersion: String =
         .getProperty("VERSION_NAME", androidGitVersion.name().replace("v", ""))
 
 version = gitOrLocalVersion
+group = "se.warting.in-app-update"
 
 apiValidation {
     ignoredProjects.add("app")
@@ -84,5 +85,3 @@ tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
 task<Delete>("clean") {
     delete(rootProject.buildDir)
 }
-
-apply(from = "${rootDir}/gradle/publish-root.gradle")

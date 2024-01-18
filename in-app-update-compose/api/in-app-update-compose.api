@@ -2,14 +2,14 @@ public final class se/warting/inappupdate/compose/ComposableSingletons$UpdateDow
 	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$UpdateDownloadedViewKt;
 	public static field lambda-1 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$inappupdatecompose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda-1$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/ComposableSingletons$UpdateRequiredViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$UpdateRequiredViewKt;
 	public static field lambda-1 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$inappupdatecompose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda-1$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public abstract interface class se/warting/inappupdate/compose/InAppUpdateState {

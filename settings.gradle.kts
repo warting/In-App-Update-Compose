@@ -16,4 +16,4 @@ buildCache {
 
 rootProject.name = "In-app Update Compose"
 include(":app")
-include(":inappupdatecompose")
+include(":in-app-update-compose")
