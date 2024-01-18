@@ -59,6 +59,12 @@ android {
         sarifOutput = file("../lint-results-app.sarif")
     }
     namespace = "se.warting.appupdatecompose"
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+        }
+    }
 }
 
 

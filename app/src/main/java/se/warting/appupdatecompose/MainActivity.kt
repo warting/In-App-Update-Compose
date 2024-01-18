@@ -48,10 +48,9 @@ fun NotAvailable() {
 fun Available(appUpdateResult: AppUpdateResult.Available) {
 
     Text(
-        text = "Available " +
-                appUpdateResult.updateInfo.availableVersionCode() +
-                " is availible since " +
-                appUpdateResult.updateInfo.clientVersionStalenessDays +
+        text = "App update available.\n" +
+                "Versioncode: " + appUpdateResult.updateInfo.availableVersionCode() +
+                "\nSince since: " + appUpdateResult.updateInfo.clientVersionStalenessDays +
                 " days"
     )
 }
