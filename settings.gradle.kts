@@ -13,6 +13,31 @@ buildCache {
         isEnabled = false
     }
 }
+// enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+dependencyResolutionManagement {
+
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+
+    pluginManagement {
+        repositories {
+            google()
+            mavenCentral()
+            gradlePluginPortal()
+        }
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+
+
+    }
+    versionCatalogs {
+        create("libs") {
+            // Noop
+        }
+    }
+}
 
 rootProject.name = "In-app Update Compose"
 include(":app")

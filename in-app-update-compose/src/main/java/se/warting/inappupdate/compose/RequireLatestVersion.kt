@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 private const val APP_UPDATE_REQUEST_CODE = 86500
 
 @Composable
-fun RequireLatestVersion(content: @Composable () -> Unit) {
+public fun RequireLatestVersion(content: @Composable () -> Unit) {
     val inAppUpdateState = rememberInAppUpdateState()
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
