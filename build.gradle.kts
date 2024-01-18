@@ -2,26 +2,22 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-
-    repositories {
-        google()
-        mavenCentral()
-    }
     dependencies {
-        classpath("com.android.tools.build:gradle:8.2.1")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20")
-        classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.4")
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath(libs.com.android.tools.build.gradle)
+        classpath(libs.org.jetbrains.kotlin.kotlin.gradle.plugin)
+        classpath(libs.io.gitlab.arturbosch.detekt.detekt.gradle.plugin)
     }
 }
 
 plugins {
-    id("com.github.ben-manes.versions") version "0.47.0"
-    id("io.gitlab.arturbosch.detekt") version "1.23.0"
-    id("io.github.gradle-nexus.publish-plugin") version "1.3.0"
-    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2"
-    id("com.gladed.androidgitversion") version "0.4.14"
+    alias(libs.plugins.com.android.application) apply false
+    alias(libs.plugins.com.android.library) apply false
+    alias(libs.plugins.com.github.ben.manes.versions)
+    alias(libs.plugins.nl.littlerobots.version.catalog.update)
+    alias(libs.plugins.io.gitlab.arturbosch.detekt)
+    alias(libs.plugins.io.github.gradle.nexus.publish.plugin)
+    alias(libs.plugins.org.jetbrains.kotlinx.binary.compatibility.validator)
+    alias(libs.plugins.com.gladed.androidgitversion)
 }
 
 androidGitVersion {
@@ -34,6 +30,7 @@ val gitOrLocalVersion: String =
 
 version = gitOrLocalVersion
 group = "se.warting.in-app-update"
+
 
 apiValidation {
     ignoredProjects.add("app")
@@ -50,11 +47,6 @@ allprojects {
         autoCorrect = true
     }
 
-    // https://github.com/otormaigh/playground-android/issues/27
-    repositories {
-        google()
-        mavenCentral()
-    }
 }
 
 detekt {
@@ -73,6 +65,15 @@ fun isNonStable(version: String): Boolean {
     val regex = "^[0-9,.v-]+(-r)?$".toRegex()
     val isStable = stableKeyword || regex.matches(version)
     return isStable.not()
+}
+
+versionCatalogUpdate {
+    sortByKey.set(true)
+    keep {
+        keepUnusedVersions.set(false)
+        keepUnusedLibraries.set(false)
+        keepUnusedPlugins.set(false)
+    }
 }
 
 tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {

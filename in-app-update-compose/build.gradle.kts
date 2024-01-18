@@ -2,15 +2,10 @@ import com.vanniktech.maven.publish.SonatypeHost
 
 plugins {
     id("com.android.library")
-    id("kotlin-android")
-    id("maven-publish")
-    id("signing")
-    id("org.jetbrains.dokka") version "1.8.20"
-    id("com.vanniktech.maven.publish") version "0.27.0"
+    kotlin("android")
+    alias(libs.plugins.org.jetbrains.dokka)
+    alias(libs.plugins.com.vanniktech.maven.publish)
 }
-
-
-
 
 mavenPublishing {
 
@@ -75,16 +70,9 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.3.2"
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
     }
 
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
-        freeCompilerArgs = listOfNotNull(
-            "-Xopt-in=kotlin.RequiresOptIn",
-            "-Xskip-prerelease-check"
-        )
-    }
 
     lint {
         baseline = file("lint-baseline.xml")
@@ -110,26 +98,24 @@ kotlin {
 
 dependencies {
 
-    val composeBom = platform("androidx.compose:compose-bom:2023.10.01")
+    val composeBom = platform(libs.androidx.compose.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    api("com.google.android.play:app-update-ktx:2.1.0")
+    api(libs.com.google.android.play.app.update.ktx)
 
-    val coroutineVersion = "1.7.1"
+    implementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.play.services)
+    implementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.core)
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutineVersion")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutineVersion")
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.material)
 
-    implementation("androidx.compose.runtime:runtime")
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material:material")
-
-    implementation(platform("com.google.android.play:core:1.10.3"))
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(platform(libs.com.google.android.play.core))
+    implementation(libs.androidx.core.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.com.google.android.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.espresso.core)
 }
