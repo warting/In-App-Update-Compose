@@ -5,9 +5,9 @@
     <string name="in_app_update_compose_update_required_title">Actualització necessària</string>
     <string name="in_app_update_compose_update_required_body">Cal actualitzar aquesta aplicació.</string>
     <string name="in_app_update_compose_update_required_button">Actualització</string>
-    <string name="in_app_update_compose_update_progress_title">S\'està descarregant</string>
-    <string name="in_app_update_compose_update_progress_body">S\'està baixant l\'actualització…</string>
+    <string name="in_app_update_compose_update_progress_title">S&#8217;està descarregant</string>
+    <string name="in_app_update_compose_update_progress_body">S&#8217;està baixant l&#8217;actualització…</string>
     <string name="in_app_update_compose_update_complete_title">Actualització llesta</string>
-    <string name="in_app_update_compose_update_complete_body">L\'actualització està preparada per instal·lar-se</string>
+    <string name="in_app_update_compose_update_complete_body">L&#8217;actualització està preparada per instal·lar-se</string>
     <string name="in_app_update_compose_update_complete_button">Instal·la</string>
 </resources>

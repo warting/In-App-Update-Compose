@@ -8,6 +8,6 @@
     <string name="in_app_update_compose_update_progress_title">Scaricamento</string>
     <string name="in_app_update_compose_update_progress_body">Scaricamento aggiornamento…</string>
     <string name="in_app_update_compose_update_complete_title">Aggiornamento pronto</string>
-    <string name="in_app_update_compose_update_complete_body">L\'aggiornamento è pronto per essere installato</string>
+    <string name="in_app_update_compose_update_complete_body">L&#8217;aggiornamento è pronto per essere installato</string>
     <string name="in_app_update_compose_update_complete_button">Installa</string>
 </resources>
