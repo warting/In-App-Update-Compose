@@ -71,11 +71,11 @@ kotlin {
 
 dependencies {
 
-    val composeBom = platform("androidx.compose:compose-bom:2023.06.00")
+    val composeBom = platform("androidx.compose:compose-bom:2023.10.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    api("com.google.android.play:core-ktx:1.8.1")
+    api("com.google.android.play:app-update-ktx:2.1.0")
 
     val coroutineVersion = "1.7.1"
 
