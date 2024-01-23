@@ -8,7 +8,10 @@
     <string name="in_app_update_compose_update_progress_title">Downloading</string>
     <string name="in_app_update_compose_update_progress_body">Downloading update…</string>
 
+    <string name="in_app_update_compose_checking_for_updates_failed">Checking for updates failed</string>
     <string name="in_app_update_compose_update_complete_title">Update ready</string>
+    <string name="in_app_update_compose_update_from_play_store">Make sure you have latest app installed</string>
     <string name="in_app_update_compose_update_complete_body">Update is ready to be installed</string>
     <string name="in_app_update_compose_update_complete_button">Install</string>
+    <string name="in_app_update_compose_update_play_store" translatable="false">Play store</string>
 </resources>

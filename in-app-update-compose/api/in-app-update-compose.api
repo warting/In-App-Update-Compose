@@ -1,26 +1,186 @@
-public final class se/warting/inappupdate/compose/ComposableSingletons$UpdateDownloadedViewKt {
-	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$UpdateDownloadedViewKt;
+public final class se/warting/inappupdate/compose/ComposableSingletons$ForceRequireLatestVersionKt {
+	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$ForceRequireLatestVersionKt;
 	public static field lambda-1 Lkotlin/jvm/functions/Function3;
+	public static field lambda-2 Lkotlin/jvm/functions/Function3;
+	public static field lambda-3 Lkotlin/jvm/functions/Function2;
+	public static field lambda-4 Lkotlin/jvm/functions/Function3;
+	public static field lambda-5 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
 	public final fun getLambda-1$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda-2$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda-3$in_app_update_compose_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda-4$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda-5$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
-public final class se/warting/inappupdate/compose/ComposableSingletons$UpdateRequiredViewKt {
-	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$UpdateRequiredViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
-	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+public final class se/warting/inappupdate/compose/Declined {
+	public static final field $stable I
+	public fun <init> (ILkotlinx/datetime/Instant;)V
+	public final fun component1 ()I
+	public final fun component2 ()Lkotlinx/datetime/Instant;
+	public final fun copy (ILkotlinx/datetime/Instant;)Lse/warting/inappupdate/compose/Declined;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/Declined;ILkotlinx/datetime/Instant;ILjava/lang/Object;)Lse/warting/inappupdate/compose/Declined;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDate ()Lkotlinx/datetime/Instant;
+	public final fun getVersion ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 
-public abstract interface class se/warting/inappupdate/compose/InAppUpdateState {
-	public abstract fun getAppUpdateResult ()Lcom/google/android/play/core/ktx/AppUpdateResult;
+public final class se/warting/inappupdate/compose/ForceRequireLatestVersionKt {
+	public static final fun ForceRequireLatestVersion (Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+}
+
+public abstract interface class se/warting/inappupdate/compose/InAppUpdateSettings {
+	public abstract fun decline (Lse/warting/inappupdate/compose/Declined;)V
+	public abstract fun getUpdateDeclined ()Lkotlinx/coroutines/flow/StateFlow;
+}
+
+public abstract class se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$DownloadedUpdate : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public fun <init> (Lcom/google/android/play/core/ktx/AppUpdateResult$Downloaded;ZLkotlin/jvm/functions/Function2;)V
+	public final fun component1 ()Lcom/google/android/play/core/ktx/AppUpdateResult$Downloaded;
+	public final fun component2 ()Z
+	public final fun component3 ()Lkotlin/jvm/functions/Function2;
+	public final fun copy (Lcom/google/android/play/core/ktx/AppUpdateResult$Downloaded;ZLkotlin/jvm/functions/Function2;)Lse/warting/inappupdate/compose/InAppUpdateState$DownloadedUpdate;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/InAppUpdateState$DownloadedUpdate;Lcom/google/android/play/core/ktx/AppUpdateResult$Downloaded;ZLkotlin/jvm/functions/Function2;ILjava/lang/Object;)Lse/warting/inappupdate/compose/InAppUpdateState$DownloadedUpdate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppUpdateResult ()Lcom/google/android/play/core/ktx/AppUpdateResult$Downloaded;
+	public final fun getOnCompleteUpdate ()Lkotlin/jvm/functions/Function2;
+	public fun hashCode ()I
+	public final fun isRequiredUpdate ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$Error : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public fun <init> (Ljava/lang/Throwable;)V
+	public final fun component1 ()Ljava/lang/Throwable;
+	public final fun copy (Ljava/lang/Throwable;)Lse/warting/inappupdate/compose/InAppUpdateState$Error;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/InAppUpdateState$Error;Ljava/lang/Throwable;ILjava/lang/Object;)Lse/warting/inappupdate/compose/InAppUpdateState$Error;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getException ()Ljava/lang/Throwable;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$InProgressUpdate : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public fun <init> (Lse/warting/inappupdate/compose/MyInstallState;Z)V
+	public final fun component1 ()Lse/warting/inappupdate/compose/MyInstallState;
+	public final fun component2 ()Z
+	public final fun copy (Lse/warting/inappupdate/compose/MyInstallState;Z)Lse/warting/inappupdate/compose/InAppUpdateState$InProgressUpdate;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/InAppUpdateState$InProgressUpdate;Lse/warting/inappupdate/compose/MyInstallState;ZILjava/lang/Object;)Lse/warting/inappupdate/compose/InAppUpdateState$InProgressUpdate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getInstallState ()Lse/warting/inappupdate/compose/MyInstallState;
+	public fun hashCode ()I
+	public final fun isRequiredUpdate ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$Loading : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public static final field INSTANCE Lse/warting/inappupdate/compose/InAppUpdateState$Loading;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$NotAvailable : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public static final field INSTANCE Lse/warting/inappupdate/compose/InAppUpdateState$NotAvailable;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$OptionalUpdate : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public fun <init> (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ZLse/warting/inappupdate/compose/MyAppUpdateInfo;)V
+	public final fun component1 ()Lkotlin/jvm/functions/Function1;
+	public final fun component2 ()Lkotlin/jvm/functions/Function0;
+	public final fun component3 ()Z
+	public final fun component4 ()Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public final fun copy (Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ZLse/warting/inappupdate/compose/MyAppUpdateInfo;)Lse/warting/inappupdate/compose/InAppUpdateState$OptionalUpdate;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/InAppUpdateState$OptionalUpdate;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;ZLse/warting/inappupdate/compose/MyAppUpdateInfo;ILjava/lang/Object;)Lse/warting/inappupdate/compose/InAppUpdateState$OptionalUpdate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppUpdateInfo ()Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public final fun getOnDeclineUpdate ()Lkotlin/jvm/functions/Function0;
+	public final fun getOnStartUpdate ()Lkotlin/jvm/functions/Function1;
+	public final fun getShouldPrompt ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/InAppUpdateState$RequiredUpdate : se/warting/inappupdate/compose/InAppUpdateState {
+	public static final field $stable I
+	public fun <init> (Lkotlin/jvm/functions/Function0;Lse/warting/inappupdate/compose/MyAppUpdateInfo;Z)V
+	public final fun component1 ()Lkotlin/jvm/functions/Function0;
+	public final fun component2 ()Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public final fun component3 ()Z
+	public final fun copy (Lkotlin/jvm/functions/Function0;Lse/warting/inappupdate/compose/MyAppUpdateInfo;Z)Lse/warting/inappupdate/compose/InAppUpdateState$RequiredUpdate;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/InAppUpdateState$RequiredUpdate;Lkotlin/jvm/functions/Function0;Lse/warting/inappupdate/compose/MyAppUpdateInfo;ZILjava/lang/Object;)Lse/warting/inappupdate/compose/InAppUpdateState$RequiredUpdate;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAppUpdateInfo ()Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public final fun getOnStartUpdate ()Lkotlin/jvm/functions/Function0;
+	public final fun getShouldPrompt ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
 }
 
 public final class se/warting/inappupdate/compose/InAppUpdateStateKt {
-	public static final fun rememberInAppUpdateState (Landroidx/compose/runtime/Composer;I)Lse/warting/inappupdate/compose/InAppUpdateState;
+	public static final fun rememberInAppUpdateState (Lse/warting/inappupdate/compose/InAppUpdateSettings;Lcom/google/android/play/core/appupdate/AppUpdateManager;IIIIIZLandroidx/compose/runtime/Composer;II)Lse/warting/inappupdate/compose/InAppUpdateState;
 }
 
-public final class se/warting/inappupdate/compose/RequireLatestVersionKt {
-	public static final fun RequireLatestVersion (Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
+public final class se/warting/inappupdate/compose/Mode : java/lang/Enum {
+	public static final field FLEXIBLE Lse/warting/inappupdate/compose/Mode;
+	public static final field IMMEDIATE Lse/warting/inappupdate/compose/Mode;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lse/warting/inappupdate/compose/Mode;
+	public static fun values ()[Lse/warting/inappupdate/compose/Mode;
+}
+
+public final class se/warting/inappupdate/compose/MyAppUpdateInfo {
+	public static final field $stable I
+	public fun <init> (ILjava/lang/Integer;I)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()I
+	public final fun copy (ILjava/lang/Integer;I)Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/MyAppUpdateInfo;ILjava/lang/Integer;IILjava/lang/Object;)Lse/warting/inappupdate/compose/MyAppUpdateInfo;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getPriority ()I
+	public final fun getStaleDays ()Ljava/lang/Integer;
+	public final fun getVersionCode ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/MyInstallState {
+	public static final field $stable I
+	public fun <init> (JILjava/lang/String;JI)V
+	public final fun component1 ()J
+	public final fun component2 ()I
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()J
+	public final fun component5 ()I
+	public final fun copy (JILjava/lang/String;JI)Lse/warting/inappupdate/compose/MyInstallState;
+	public static synthetic fun copy$default (Lse/warting/inappupdate/compose/MyInstallState;JILjava/lang/String;JIILjava/lang/Object;)Lse/warting/inappupdate/compose/MyInstallState;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getBytesDownloaded ()J
+	public final fun getInstallErrorCode ()I
+	public final fun getInstallStatus ()I
+	public final fun getPackageName ()Ljava/lang/String;
+	public final fun getTotalBytesToDownload ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class se/warting/inappupdate/compose/NoUiKt {
+	public static final fun NoUi (Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
 }
 

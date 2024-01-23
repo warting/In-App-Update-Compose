@@ -13,8 +13,8 @@ mavenPublishing {
     signAllPublications()
 
     pom {
-        name.set("In App Update Compose")
-        description.set("In-App update compose")
+        name.set("In App Update Compose - Material UI")
+        description.set("In-App update compose with material UI")
         inceptionYear.set("2021")
         url.set("https://github.com/warting/In-App-Update-Compose/")
         licenses {
@@ -47,28 +47,6 @@ version = PUBLISH_VERSION
 
 
 android {
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 21
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-        }
-    }
-
-    buildFeatures {
-        compose = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
-    }
-
-
     lint {
         baseline = file("lint-baseline.xml")
         checkReleaseBuilds = true
@@ -80,41 +58,41 @@ android {
         disable.add("NewerVersionAvailable")
         checkDependencies = true
         checkGeneratedSources = false
-        sarifOutput = file("lint-results-in-app-update-compose.sarif")
+        sarifOutput = file("lint-results-in-app-update-compose-mui.sarif")
     }
-    namespace = "se.warting.inappupdate"
+    namespace = "se.warting.inappupdate.compose.material"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 21
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+    buildFeatures {
+        compose = true
+    }
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+        }
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
+    }
 }
 kotlin {
-    // https://kotlinlang.org/docs/whatsnew14.html#explicit-api-mode-for-library-authors
     explicitApi()
     jvmToolchain(17)
 }
-
-
 dependencies {
-
-    val composeBom = platform(libs.androidx.compose.compose.bom)
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-    implementation(libs.org.jetbrains.kotlinx.kotlinx.datetime)
-    implementation(libs.androidx.activity.activity.ktx)
-    implementation(libs.androidx.activity.activity.compose)
-    implementation(libs.logcat)
-
-    api(libs.com.google.android.play.app.update.ktx)
-
-    implementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.play.services)
-    implementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.core)
-
-    implementation(libs.androidx.compose.runtime)
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.material)
-
-    //implementation(platform(libs.com.google.android.play.core))
+    implementation(libs.androidx.compose.ui.ui.tooling.preview)
     implementation(libs.androidx.core.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.com.google.android.material)
+    implementation(libs.androidx.compose.material)
+    implementation(project(":in-app-update-compose"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.espresso.core)
+    debugImplementation(libs.androidx.compose.ui.ui.tooling)
 }

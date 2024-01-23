@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">App Update Compose</string>
+    <string name="app_name">In App Update Compose</string>
+    <string name="toggles_prompt_text">No update mode selected change update mode in toggles app or manually set it to FORCED, CUSTOM or MATERIAL</string>
+    <string name="install_open_toggles_app">Install / open toggles app</string>
+    <string name="package_name">package name: %1$s</string>
+    <string name="version_name">version name: %1$s</string>
+    <string name="version_code">version code: %1$s</string>
 </resources>

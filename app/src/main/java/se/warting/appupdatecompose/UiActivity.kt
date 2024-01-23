@@ -7,7 +7,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import se.warting.inappupdate.compose.RequireLatestVersion
+import se.warting.inappupdate.compose.material.MaterialRequireLatestVersion
 
 class UiActivity : ComponentActivity() {
 
@@ -17,7 +17,7 @@ class UiActivity : ComponentActivity() {
             MaterialTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    RequireLatestVersion {
+                    MaterialRequireLatestVersion {
                         Welcome()
                     }
                 }
