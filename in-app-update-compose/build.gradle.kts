@@ -41,7 +41,7 @@ mavenPublishing {
 
 val PUBLISH_GROUP_ID: String by extra(rootProject.group as String)
 val PUBLISH_VERSION: String by extra(rootProject.version as String)
-val PUBLISH_ARTIFACT_ID by extra("flow")
+val PUBLISH_ARTIFACT_ID by extra("in-app-update-compose")
 
 group = PUBLISH_GROUP_ID
 version = PUBLISH_VERSION
