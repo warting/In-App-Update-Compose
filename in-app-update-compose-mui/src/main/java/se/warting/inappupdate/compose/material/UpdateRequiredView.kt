@@ -1,4 +1,4 @@
-package se.warting.inappupdate.compose
+package se.warting.inappupdate.compose.material
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,22 +14,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import se.warting.inappupdate.R
 
 @Composable
-internal fun UpdateDownloadedView(update: () -> Unit) {
+internal fun UpdateRequiredView(update: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            text = stringResource(id = R.string.in_app_update_compose_update_complete_title),
+            text = stringResource(id = R.string.in_app_update_compose_update_required_title),
             style = MaterialTheme.typography.h4.copy(fontWeight = FontWeight.W700)
         )
 
         Text(
-            text = stringResource(id = R.string.in_app_update_compose_update_complete_body),
+            text = stringResource(id = R.string.in_app_update_compose_update_required_body),
             style = MaterialTheme.typography.body1.copy(fontWeight = FontWeight.W700)
         )
 
@@ -38,7 +37,7 @@ internal fun UpdateDownloadedView(update: () -> Unit) {
         Button(modifier = Modifier,
             onClick = { update() }) {
             Text(
-                text = stringResource(id = R.string.in_app_update_compose_update_complete_button),
+                text = stringResource(id = R.string.in_app_update_compose_update_required_button),
             )
         }
     }

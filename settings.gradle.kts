@@ -42,3 +42,4 @@ dependencyResolutionManagement {
 rootProject.name = "In-app Update Compose"
 include(":app")
 include(":in-app-update-compose")
+include(":in-app-update-compose-mui")

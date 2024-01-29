@@ -6,6 +6,7 @@ plugins {
 android {
     compileSdk = 34
 
+    namespace = "se.warting.appupdatecompose"
     defaultConfig {
         applicationId = "se.premex.byggappen"
         minSdk = 21
@@ -27,10 +28,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
@@ -59,7 +56,6 @@ android {
         checkGeneratedSources = false
         sarifOutput = file("../lint-results-app.sarif")
     }
-    namespace = "se.warting.appupdatecompose"
 
     packaging {
         jniLibs {
@@ -67,8 +63,9 @@ android {
         }
     }
 }
-
-
+kotlin {
+    jvmToolchain(17)
+}
 dependencies {
 
     val composeBom = platform(libs.androidx.compose.compose.bom)
@@ -79,6 +76,7 @@ dependencies {
 
     implementation(libs.androidx.core.core.ktx)
     implementation(project(":in-app-update-compose"))
+    implementation(project(":in-app-update-compose-mui"))
     implementation(libs.androidx.appcompat)
     implementation(libs.com.google.android.material)
     implementation(libs.androidx.compose.ui)
@@ -86,6 +84,7 @@ dependencies {
     implementation(libs.androidx.compose.ui.ui.tooling.preview)
     implementation(libs.androidx.lifecycle.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.activity.compose)
+    implementation(libs.se.eelde.toggles.toggles.flow)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.espresso.core)
