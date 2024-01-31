@@ -34,7 +34,8 @@ public fun rememberInAppUpdateState(
     promptIntervalHighPrioritizeUpdateInDays: Int = 1,
     promptIntervalMediumPrioritizeUpdateInDays: Int = 1,
     promptIntervalLowPrioritizeUpdateInDays: Int = 7,
-    autoTriggerUpdates: Boolean = false,
+    autoTriggerRequiredUpdates: Boolean = false,
+    autoTriggerOptionalUpdates: Boolean = false,
 ): InAppUpdateState {
     val context = LocalContext.current
 
@@ -54,6 +55,7 @@ public fun rememberInAppUpdateState(
             promptIntervalMediumPrioritizeUpdateInDays = promptIntervalMediumPrioritizeUpdateInDays,
             promptIntervalLowPrioritizeUpdateInDays = promptIntervalLowPrioritizeUpdateInDays,
         ),
-        autoTriggerUpdates = autoTriggerUpdates,
+        autoTriggerRequiredUpdates = autoTriggerRequiredUpdates,
+        autoTriggerOptionalUpdates = autoTriggerOptionalUpdates,
     )
 }

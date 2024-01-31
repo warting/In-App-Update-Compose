@@ -61,7 +61,8 @@ internal fun rememberMutableInAppUpdateState(
     settings: InAppUpdateSettings,
     appUpdateManager: AppUpdateManager,
     numberSettings: NumberSettings,
-    autoTriggerUpdates: Boolean = false,
+    autoTriggerRequiredUpdates: Boolean = false,
+    autoTriggerOptionalUpdates: Boolean = false,
 ): InAppUpdateState {
     var onResultState: (ActivityResult) -> Unit by remember { mutableStateOf({}) }
     val intentLauncher = rememberLauncherForActivityResult(
@@ -84,8 +85,6 @@ internal fun rememberMutableInAppUpdateState(
                 recomposeKey++
             },
             settings = settings,
-            numberSettings = numberSettings,
-            autoTriggerUpdates = autoTriggerUpdates,
         )
     }
 
@@ -131,13 +130,13 @@ internal fun rememberMutableInAppUpdateState(
             }
 
             is InAppUpdateState.OptionalUpdate -> {
-                if (state.shouldPrompt && autoTriggerUpdates) {
+                if (state.shouldPrompt && autoTriggerOptionalUpdates) {
                     state.onStartUpdate(Mode.FLEXIBLE)
                 }
             }
 
             is InAppUpdateState.RequiredUpdate -> {
-                if (state.shouldPrompt && autoTriggerUpdates) {
+                if (state.shouldPrompt && autoTriggerRequiredUpdates) {
                     state.onStartUpdate()
                 }
             }
@@ -146,7 +145,6 @@ internal fun rememberMutableInAppUpdateState(
 
     return state
 }
-
 
 
 public sealed class InAppUpdateState {
@@ -181,16 +179,14 @@ public sealed class InAppUpdateState {
 
 internal class MutableInAppUpdateState(
     private val appUpdateManager: AppUpdateManager,
-    private val produceIntentLauncher: (onResult: (ActivityResult) -> Unit) ->
-    ActivityResultLauncher<IntentSenderRequest>,
+    private val produceIntentLauncher:
+        (onResult: (ActivityResult) -> Unit) -> ActivityResultLauncher<IntentSenderRequest>,
     private val recompose: () -> Unit,
     private val settings: InAppUpdateSettings,
-    private val numberSettings: NumberSettings,
-    private val autoTriggerUpdates: Boolean = false,
 ) {
 
     var updateMode: Mode? = null
-    internal fun startUpdate(updateInfo: AppUpdateInfo, mode: Mode) {
+    private fun startUpdate(updateInfo: AppUpdateInfo, mode: Mode) {
 
         updateMode = mode
 
@@ -375,7 +371,6 @@ internal fun AppUpdateInfo.toAppUpdateInfo(): MyAppUpdateInfo = MyAppUpdateInfo(
 )
 
 
-
 public data class MyInstallState(
     val bytesDownloaded: Long,
     val installErrorCode: Int,
@@ -413,6 +408,11 @@ internal fun shouldPromptToUpdate(
             else -> numberSettings.promptIntervalLowPrioritizeUpdateInDays
         }
 
+        // Always prompt if the user has never declined this update.
+        if (declined.version != availableVersionCode()) {
+            return true
+        }
+
         // To prompt for an optional update, the update must be at least
         // `promptIntervalDays` old and the user declined this update at
         // least `promptIntervalDays` ago (or has never declined).
@@ -420,12 +420,12 @@ internal fun shouldPromptToUpdate(
                 ?: numberSettings.promptIntervalLowPrioritizeUpdateInDays) < promptIntervalDays
         ) return false
 
-        if (declined.version == availableVersionCode() &&
-            declined.date.daysUntil(
-                Clock.System.now(),
-                TimeZone.currentSystemDefault()
-            ) < promptIntervalDays
-        ) {
+        val daysSinceLastDecline = declined.date.daysUntil(
+            Clock.System.now(),
+            TimeZone.currentSystemDefault()
+        )
+
+        if (daysSinceLastDecline < promptIntervalDays) {
             return false
         }
 
@@ -445,6 +445,11 @@ internal fun shouldPromptToRequiredUpdate(
 
         val promptIntervalDays = numberSettings.promptIntervalHighPrioritizeUpdateInDays
 
+        // Always prompt if the user has never declined this update.
+        if (declined.version != availableVersionCode()) {
+            return true
+        }
+
         // To prompt for an optional update, the update must be at least
         // `promptIntervalDays` old and the user declined this update at
         // least `promptIntervalDays` ago (or has never declined).
@@ -452,12 +457,12 @@ internal fun shouldPromptToRequiredUpdate(
                 ?: numberSettings.promptIntervalLowPrioritizeUpdateInDays) < promptIntervalDays
         ) return false
 
-        if (declined.version == availableVersionCode() &&
-            declined.date.daysUntil(
-                Clock.System.now(),
-                TimeZone.currentSystemDefault()
-            ) < promptIntervalDays
-        ) {
+        val daysSinceLastDecline = declined.date.daysUntil(
+            Clock.System.now(),
+            TimeZone.currentSystemDefault()
+        )
+
+        if (daysSinceLastDecline < promptIntervalDays) {
             return false
         }
 

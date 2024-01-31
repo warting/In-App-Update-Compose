@@ -9,13 +9,15 @@ import kotlinx.coroutines.launch
 
 @Composable
 public fun NoUi(
+    errorContent: @Composable () -> Unit,
     content: @Composable () -> Unit,
 ) {
     when (val inAppUpdateState: InAppUpdateState = rememberInAppUpdateState(
-        autoTriggerUpdates = true
+        autoTriggerRequiredUpdates = true,
+        autoTriggerOptionalUpdates = true,
     )) {
         is InAppUpdateState.DownloadedUpdate -> {
-            CircularProgressIndicator()
+            // CircularProgressIndicator()
             LaunchedEffect(inAppUpdateState) {
                 launch {
                     inAppUpdateState.onCompleteUpdate(inAppUpdateState.appUpdateResult)
@@ -24,18 +26,15 @@ public fun NoUi(
         }
 
         is InAppUpdateState.InProgressUpdate -> {
-            CircularProgressIndicator()
+            // CircularProgressIndicator()
         }
 
         InAppUpdateState.Loading -> {
-            CircularProgressIndicator()
+            // CircularProgressIndicator()
         }
 
         is InAppUpdateState.OptionalUpdate -> {
             content()
-            if (inAppUpdateState.shouldPrompt) {
-                inAppUpdateState.onStartUpdate(Mode.FLEXIBLE)
-            }
         }
 
         is InAppUpdateState.RequiredUpdate -> {
@@ -45,13 +44,13 @@ public fun NoUi(
                     activity?.finish()
                 }
             } else {
-                CircularProgressIndicator()
+                // CircularProgressIndicator()
             }
         }
 
         InAppUpdateState.NotAvailable -> content()
         is InAppUpdateState.Error -> {
-            content()
+            errorContent()
         }
     }
 }
