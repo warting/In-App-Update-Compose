@@ -408,6 +408,11 @@ internal fun shouldPromptToUpdate(
             else -> numberSettings.promptIntervalLowPrioritizeUpdateInDays
         }
 
+        // Always prompt if the user has never declined this update.
+        if (declined.version != availableVersionCode()) {
+            return true
+        }
+
         // To prompt for an optional update, the update must be at least
         // `promptIntervalDays` old and the user declined this update at
         // least `promptIntervalDays` ago (or has never declined).
@@ -415,12 +420,12 @@ internal fun shouldPromptToUpdate(
                 ?: numberSettings.promptIntervalLowPrioritizeUpdateInDays) < promptIntervalDays
         ) return false
 
-        if (declined.version == availableVersionCode() &&
-            declined.date.daysUntil(
-                Clock.System.now(),
-                TimeZone.currentSystemDefault()
-            ) < promptIntervalDays
-        ) {
+        val daysSinceLastDecline = declined.date.daysUntil(
+            Clock.System.now(),
+            TimeZone.currentSystemDefault()
+        )
+
+        if (daysSinceLastDecline < promptIntervalDays) {
             return false
         }
 
@@ -440,6 +445,11 @@ internal fun shouldPromptToRequiredUpdate(
 
         val promptIntervalDays = numberSettings.promptIntervalHighPrioritizeUpdateInDays
 
+        // Always prompt if the user has never declined this update.
+        if (declined.version != availableVersionCode()) {
+            return true
+        }
+
         // To prompt for an optional update, the update must be at least
         // `promptIntervalDays` old and the user declined this update at
         // least `promptIntervalDays` ago (or has never declined).
@@ -447,12 +457,12 @@ internal fun shouldPromptToRequiredUpdate(
                 ?: numberSettings.promptIntervalLowPrioritizeUpdateInDays) < promptIntervalDays
         ) return false
 
-        if (declined.version == availableVersionCode() &&
-            declined.date.daysUntil(
-                Clock.System.now(),
-                TimeZone.currentSystemDefault()
-            ) < promptIntervalDays
-        ) {
+        val daysSinceLastDecline = declined.date.daysUntil(
+            Clock.System.now(),
+            TimeZone.currentSystemDefault()
+        )
+
+        if (daysSinceLastDecline < promptIntervalDays) {
             return false
         }
 

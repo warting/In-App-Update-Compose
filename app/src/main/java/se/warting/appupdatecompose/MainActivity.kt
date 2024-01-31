@@ -35,11 +35,16 @@ class MainActivity : ComponentActivity() {
                         Text("Material update")
                     }
                 }
-                UpdateMode.OPINIATED_NO_UI -> NoUi {
+
+                UpdateMode.OPINIATED_NO_UI -> NoUi(errorContent = {
+                    AppContent {
+                        Text("Material update failed")
+                    }
+                }, content = {
                     AppContent {
                         Text("Material update")
                     }
-                }
+                })
 
                 UpdateMode.NONE -> TogglesPrompt()
             }

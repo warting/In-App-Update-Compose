@@ -181,6 +181,6 @@ public final class se/warting/inappupdate/compose/MyInstallState {
 }
 
 public final class se/warting/inappupdate/compose/NoUiKt {
-	public static final fun NoUi (Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
+	public static final fun NoUi (Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;I)V
 }
 

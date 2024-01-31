@@ -70,21 +70,20 @@ public fun MaterialRequireLatestVersion(
         InAppUpdateState.Loading -> {
             LoadingView()
         }
-
-        InAppUpdateState.NotAvailable -> content()
+        InAppUpdateState.NotAvailable -> {
+            content()
+        }
         is InAppUpdateState.OptionalUpdate -> {
             content()
         }
 
         is InAppUpdateState.RequiredUpdate -> {
-            LaunchedEffect(inAppUpdateState.shouldPrompt) {
-                if (inAppUpdateState.shouldPrompt) {
+            if (inAppUpdateState.shouldPrompt) {
+                LoadingView()
+            } else {
+                UpdateRequiredView {
                     inAppUpdateState.onStartUpdate()
                 }
-            }
-
-            UpdateRequiredView {
-                inAppUpdateState.onStartUpdate()
             }
         }
 
