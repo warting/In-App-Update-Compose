@@ -86,6 +86,11 @@ kotlin {
     jvmToolchain(17)
 }
 dependencies {
+
+    val composeBom = platform(libs.androidx.compose.compose.bom)
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
     implementation(libs.androidx.compose.ui.ui.tooling.preview)
     implementation(libs.androidx.core.core.ktx)
     implementation(libs.androidx.appcompat)
