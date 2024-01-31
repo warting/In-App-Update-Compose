@@ -44,7 +44,7 @@ jobs:
 
       - name: Publish application
         run: |
-          echo VERSION_NAME=1.0.0-SNAPSHOT > ./local.properties
+          echo VERSION_NAME=2.0.0-SNAPSHOT > ./local.properties
           ./gradlew publishAllPublicationsToMavenCentralRepository
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.OSSRH_USERNAME }}
