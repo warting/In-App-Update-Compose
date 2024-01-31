@@ -61,7 +61,8 @@ internal fun rememberMutableInAppUpdateState(
     settings: InAppUpdateSettings,
     appUpdateManager: AppUpdateManager,
     numberSettings: NumberSettings,
-    autoTriggerUpdates: Boolean = false,
+    autoTriggerRequiredUpdates: Boolean = false,
+    autoTriggerOptionalUpdates: Boolean = false,
 ): InAppUpdateState {
     var onResultState: (ActivityResult) -> Unit by remember { mutableStateOf({}) }
     val intentLauncher = rememberLauncherForActivityResult(
@@ -84,8 +85,6 @@ internal fun rememberMutableInAppUpdateState(
                 recomposeKey++
             },
             settings = settings,
-            numberSettings = numberSettings,
-            autoTriggerUpdates = autoTriggerUpdates,
         )
     }
 
@@ -131,13 +130,13 @@ internal fun rememberMutableInAppUpdateState(
             }
 
             is InAppUpdateState.OptionalUpdate -> {
-                if (state.shouldPrompt && autoTriggerUpdates) {
+                if (state.shouldPrompt && autoTriggerOptionalUpdates) {
                     state.onStartUpdate(Mode.FLEXIBLE)
                 }
             }
 
             is InAppUpdateState.RequiredUpdate -> {
-                if (state.shouldPrompt && autoTriggerUpdates) {
+                if (state.shouldPrompt && autoTriggerRequiredUpdates) {
                     state.onStartUpdate()
                 }
             }
@@ -146,7 +145,6 @@ internal fun rememberMutableInAppUpdateState(
 
     return state
 }
-
 
 
 public sealed class InAppUpdateState {
@@ -181,16 +179,14 @@ public sealed class InAppUpdateState {
 
 internal class MutableInAppUpdateState(
     private val appUpdateManager: AppUpdateManager,
-    private val produceIntentLauncher: (onResult: (ActivityResult) -> Unit) ->
-    ActivityResultLauncher<IntentSenderRequest>,
+    private val produceIntentLauncher:
+        (onResult: (ActivityResult) -> Unit) -> ActivityResultLauncher<IntentSenderRequest>,
     private val recompose: () -> Unit,
     private val settings: InAppUpdateSettings,
-    private val numberSettings: NumberSettings,
-    private val autoTriggerUpdates: Boolean = false,
 ) {
 
     var updateMode: Mode? = null
-    internal fun startUpdate(updateInfo: AppUpdateInfo, mode: Mode) {
+    private fun startUpdate(updateInfo: AppUpdateInfo, mode: Mode) {
 
         updateMode = mode
 
@@ -373,7 +369,6 @@ internal fun AppUpdateInfo.toAppUpdateInfo(): MyAppUpdateInfo = MyAppUpdateInfo(
     staleDays = clientVersionStalenessDays(),
     priority = updatePriority(),
 )
-
 
 
 public data class MyInstallState(

@@ -12,7 +12,8 @@ public fun NoUi(
     content: @Composable () -> Unit,
 ) {
     when (val inAppUpdateState: InAppUpdateState = rememberInAppUpdateState(
-        autoTriggerUpdates = true
+        autoTriggerRequiredUpdates = true,
+        autoTriggerOptionalUpdates = true,
     )) {
         is InAppUpdateState.DownloadedUpdate -> {
             CircularProgressIndicator()

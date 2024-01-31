@@ -18,13 +18,15 @@ import se.warting.inappupdate.compose.InAppUpdateState
 import se.warting.inappupdate.compose.Mode
 import se.warting.inappupdate.compose.rememberInAppUpdateState
 
+@Suppress("LongMethod")
 @Composable
 fun CustomUpdate() {
     // A surface container using the 'background' color from the theme
     Surface(color = MaterialTheme.colors.background) {
         when (val updateState: InAppUpdateState = rememberInAppUpdateState(
             highPrioritizeUpdates = 0,
-            autoTriggerUpdates = true,
+            autoTriggerRequiredUpdates = true,
+            autoTriggerOptionalUpdates = true,
         )) {
             is InAppUpdateState.DownloadedUpdate -> {
                 val scope = rememberCoroutineScope()

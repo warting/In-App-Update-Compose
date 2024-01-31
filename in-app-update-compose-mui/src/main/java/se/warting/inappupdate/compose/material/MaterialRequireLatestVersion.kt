@@ -29,7 +29,8 @@ public fun MaterialRequireLatestVersion(
         promptIntervalHighPrioritizeUpdateInDays = promptIntervalHighPrioritizeUpdateInDays,
         promptIntervalMediumPrioritizeUpdateInDays = promptIntervalMediumPrioritizeUpdateInDays,
         promptIntervalLowPrioritizeUpdateInDays = promptIntervalLowPrioritizeUpdateInDays,
-        autoTriggerUpdates = true,
+        autoTriggerRequiredUpdates = true,
+        autoTriggerOptionalUpdates = true,
     )
     val scope = rememberCoroutineScope()
 
