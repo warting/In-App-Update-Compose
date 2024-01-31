@@ -133,7 +133,7 @@ public final class se/warting/inappupdate/compose/InAppUpdateState$RequiredUpdat
 }
 
 public final class se/warting/inappupdate/compose/InAppUpdateStateKt {
-	public static final fun rememberInAppUpdateState (Lse/warting/inappupdate/compose/InAppUpdateSettings;Lcom/google/android/play/core/appupdate/AppUpdateManager;IIIIIZLandroidx/compose/runtime/Composer;II)Lse/warting/inappupdate/compose/InAppUpdateState;
+	public static final fun rememberInAppUpdateState (Lse/warting/inappupdate/compose/InAppUpdateSettings;Lcom/google/android/play/core/appupdate/AppUpdateManager;IIIIIZZLandroidx/compose/runtime/Composer;II)Lse/warting/inappupdate/compose/InAppUpdateState;
 }
 
 public final class se/warting/inappupdate/compose/Mode : java/lang/Enum {
