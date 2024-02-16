@@ -8,7 +8,7 @@ com-google-android-play = "2.1.0"
 io-gitlab-arturbosch-detekt = "1.23.5"
 kotlin = "1.9.22"
 logcat = "0.1"
-org-jetbrains-kotlinx = "1.7.3"
+org-jetbrains-kotlinx = "1.8.0"
 toggles-flow = "0.0.1"
 
 [libraries]
