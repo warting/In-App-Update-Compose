@@ -36,7 +36,7 @@ if (localPropertiesFile.exists()) {
 }
 
 val gitOrLocalVersion: String =
-    localProperties.getProperty("VERSION_NAME", androidGitVersion.name().replace("v", ""))
+    localProperties.getProperty("VERSION_NAME") ?: androidGitVersion.name().replace("v", "")
 
 version = gitOrLocalVersion
 group = "se.warting.in-app-update"
