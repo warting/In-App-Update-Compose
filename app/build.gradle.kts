@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -39,9 +40,6 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
-    }
 
     lint {
         baseline = file("lint-baseline.xml")
@@ -52,6 +50,7 @@ android {
         disable.add("LintBaseline")
         disable.add("GradleDependency")
         disable.add("NewerVersionAvailable")
+        disable.add("AndroidGradlePluginVersion")
         checkDependencies = true
         checkGeneratedSources = false
         sarifOutput = file("../lint-results-app.sarif")
