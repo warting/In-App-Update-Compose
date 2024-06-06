@@ -94,7 +94,7 @@ dependencies {
     implementation(libs.androidx.core.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.material)
-    implementation(project(":in-app-update-compose"))
+    api(project(":in-app-update-compose"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.espresso.core)
