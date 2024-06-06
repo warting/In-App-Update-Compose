@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.org.jetbrains.dokka)
     alias(libs.plugins.com.vanniktech.maven.publish)
+    alias(libs.plugins.compose.compiler)
 }
 
 mavenPublishing {
@@ -64,11 +65,6 @@ android {
         compose = true
     }
 
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidx.compose.compiler.get()
-    }
-
-
     lint {
         baseline = file("lint-baseline.xml")
         checkReleaseBuilds = true
@@ -78,6 +74,7 @@ android {
         disable.add("LintBaseline")
         disable.add("GradleDependency")
         disable.add("NewerVersionAvailable")
+        disable.add("AndroidGradlePluginVersion")
         checkDependencies = true
         checkGeneratedSources = false
         sarifOutput = file("lint-results-in-app-update-compose.sarif")

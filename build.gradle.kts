@@ -1,4 +1,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import io.gitlab.arturbosch.detekt.Detekt
+import java.io.FileInputStream
+import java.util.Properties
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
@@ -19,15 +22,21 @@ plugins {
     alias(libs.plugins.io.github.gradle.nexus.publish.plugin)
     alias(libs.plugins.org.jetbrains.kotlinx.binary.compatibility.validator)
     alias(libs.plugins.com.gladed.androidgitversion)
+    alias(libs.plugins.compose.compiler) apply false
 }
 
 androidGitVersion {
     tagPattern = "^v[0-9]+.*"
 }
 
+val localPropertiesFile: File = rootProject.file("local.properties")
+val localProperties = Properties()
+if (localPropertiesFile.exists()) {
+    localProperties.load(FileInputStream(localPropertiesFile))
+}
+
 val gitOrLocalVersion: String =
-    com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(rootDir)
-        .getProperty("VERSION_NAME", androidGitVersion.name().replace("v", ""))
+    localProperties.getProperty("VERSION_NAME", androidGitVersion.name().replace("v", ""))
 
 version = gitOrLocalVersion
 group = "se.warting.in-app-update"
@@ -41,7 +50,7 @@ allprojects {
     apply(plugin = "io.gitlab.arturbosch.detekt")
 
     dependencies {
-        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.5")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
     }
 
     detekt {
@@ -53,13 +62,16 @@ allprojects {
 detekt {
     autoCorrect = true
     buildUponDefaultConfig = true
-    config = files("$projectDir/config/detekt/detekt.yml")
+    config.from("$projectDir/config/detekt/detekt.yml")
     baseline = file("$projectDir/config/detekt/baseline.xml")
+}
 
+tasks.withType<Detekt>().configureEach {
     reports {
-        html.enabled = true
+        html.required.set(true)
     }
 }
+
 
 fun isNonStable(version: String): Boolean {
     val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
