@@ -1,6 +1,6 @@
 
 plugins {
-    id("com.gradle.enterprise") version "3.17.4"
+    id("com.gradle.enterprise") version "3.17.5"
 }
 
 buildCache {
