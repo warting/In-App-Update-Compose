@@ -2,7 +2,7 @@
 agp = "8.5.0"
 androidx-activity = "1.9.0"
 androidx-appcompat = "1.7.0"
-androidx-test-espresso = "3.5.1"
+androidx-test-espresso = "3.6.0"
 com-google-android-play = "2.1.0"
 detekt-formatting = "1.23.6"
 io-gitlab-arturbosch-detekt = "1.23.6"
