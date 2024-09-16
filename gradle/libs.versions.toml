@@ -8,7 +8,7 @@ detekt-formatting = "1.23.6"
 io-gitlab-arturbosch-detekt = "1.23.6"
 kotlin = "2.0.0"
 logcat = "0.1"
-org-jetbrains-kotlinx = "1.8.1"
+org-jetbrains-kotlinx = "1.9.0"
 toggles-flow = "0.0.1"
 
 [libraries]
