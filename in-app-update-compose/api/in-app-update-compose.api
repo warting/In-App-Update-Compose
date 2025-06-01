@@ -1,16 +1,11 @@
 public final class se/warting/inappupdate/compose/ComposableSingletons$ForceRequireLatestVersionKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/ComposableSingletons$ForceRequireLatestVersionKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
-	public static field lambda-2 Lkotlin/jvm/functions/Function3;
-	public static field lambda-3 Lkotlin/jvm/functions/Function2;
-	public static field lambda-4 Lkotlin/jvm/functions/Function3;
-	public static field lambda-5 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-2$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-3$in_app_update_compose_release ()Lkotlin/jvm/functions/Function2;
-	public final fun getLambda-4$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-5$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-1304250029$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-1578834939$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-297170455$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-991956875$in_app_update_compose_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda$627321411$in_app_update_compose_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/Declined {
