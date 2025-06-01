@@ -58,7 +58,7 @@ allprojects {
 
 ## Libraries
 
-This library consists of two main modules:
+This library consists of two main libraries:
 
 ### Core Module
 Basic functionality without any default UI:
