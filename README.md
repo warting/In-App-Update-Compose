@@ -1,9 +1,26 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.warting.in-app-update/in-app-update-compose/badge.png)](https://maven-badges.herokuapp.com/maven-central/se.warting.in-app-update/in-app-update-compose)
 [![Crowdin](https://badges.crowdin.net/in-app-update-compose/localized.svg)](https://crowdin.com/project/in-app-update-compose)
+![Platform](https://img.shields.io/badge/platform-android-green.svg)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 
-# In-App update compose
+# In-App Update Compose
 
-A Jetpack Compose implementation for in-app updates in Android applications.
+A Jetpack Compose implementation for managing in-app updates in Android applications. This library makes it easy to integrate Google Play's in-app update API with your Compose UI, providing both ready-to-use UI components and flexible state management.
+
+## Features
+
+- 🔄 Automatic update checking with Google Play
+- 🎨 Material Design UI components for update flows
+- 🔧 Configurable update priorities and prompt intervals
+- 🔕 Silent update option for minimal UI intervention 
+- 🎛️ Custom UI state management support
+- 👥 Multiple implementation approaches to fit your needs
+
+## Requirements
+
+- Android API level 21+ (Android 5.0 Lollipop and higher)
+- Jetpack Compose
+- App published on Google Play Store
 
 ## How to include in your project
 
@@ -62,6 +79,26 @@ dependencies {
 ```
 
 ## How to use
+
+### Update State Flow Diagram
+
+The library manages updates through different states:
+
+```
+Loading ──► NotAvailable ────────────────────┐
+  │               │                          │
+  │               │                          ▼
+  └─► RequiredUpdate ◄─┐                   Content
+  │     │               │                    ▲
+  │     ▼               │                    │
+  └─► InProgressUpdate ─┘                    │
+  │     │                                    │
+  │     ▼                                    │
+  └─► DownloadedUpdate ───────────────────►Error
+        │                                    ▲
+        │                                    │
+        └───► CompleteUpdate ────────────────┘
+```
 
 ### Using Material UI Implementation
 
@@ -137,6 +174,26 @@ Key features of `rememberInAppUpdateState`:
 
 Both `MaterialRequireLatestVersion` and `SilentUpdateHandler` use this function internally, but you can also use it directly when you need complete control over your update UI and behavior.
 
+### Update Types and Priority
+
+The library categorizes updates into different priority levels:
+
+1. **High Priority Updates** - Critical updates like security patches
+2. **Medium Priority Updates** - Important feature updates
+3. **Low Priority Updates** - Minor enhancements and improvements
+
+You can configure how these updates are handled:
+
+```kotlin
+rememberInAppUpdateState(
+    highPrioritizeUpdates = 4,           // How many updates to consider high priority
+    mediumPrioritizeUpdates = 2,         // How many updates to consider medium priority
+    promptIntervalHighPrioritizeUpdateInDays = 1,    // How often to prompt for high priority
+    promptIntervalMediumPrioritizeUpdateInDays = 3,  // How often to prompt for medium priority
+    promptIntervalLowPrioritizeUpdateInDays = 7      // How often to prompt for low priority
+)
+```
+
 ### Additional Options
 
 The library supports various configurations:
@@ -177,4 +234,8 @@ When using `SilentUpdateHandler`:
 - Your error content is only shown if update checking fails
 
 > **Note:** The previous `NoUi` component is deprecated and has been replaced by `SilentUpdateHandler`
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 

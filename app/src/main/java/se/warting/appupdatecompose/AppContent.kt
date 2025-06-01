@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import se.warting.inappupdate.compose.rememberInAppUpdateState
 
 @Composable
 fun AppContent(content: @Composable () -> Unit) {
