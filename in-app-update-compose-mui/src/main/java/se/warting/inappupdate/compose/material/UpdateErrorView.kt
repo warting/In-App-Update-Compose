@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.core.net.toUri
 
 @Preview
 @Composable
@@ -61,14 +62,14 @@ internal fun UpdateErrorView() {
                         context.startActivity(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("market://details?id=$appPackageName")
+                                "market://details?id=$appPackageName".toUri()
                             )
                         )
                     } catch (e: ActivityNotFoundException) {
                         context.startActivity(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                Uri.parse("https://play.google.com/store/apps/details?id=$appPackageName")
+                                "https://play.google.com/store/apps/details?id=$appPackageName".toUri()
                             )
                         )
                     }
