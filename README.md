@@ -65,7 +65,7 @@ dependencies {
 
 ### Using Material UI Implementation
 
-The simplest way is to use the Material UI implementation with `MaterialRequireLatestVersion`:
+The simplest way is to use the Material UI implementation with `MaterialRequireLatestVersion`. This component provides a complete Material Design UI for handling all update states:
 
 ```kotlin
 @Composable
@@ -76,6 +76,14 @@ fun MainView() {
     }
 }
 ```
+
+When using `MaterialRequireLatestVersion`:
+- A loading indicator appears when checking for updates
+- Required updates show a mandatory update screen until the user updates
+- Download progress is displayed for required updates being downloaded
+- Downloaded required updates show an install prompt
+- Optional updates allow continued app usage with normal content
+- Update errors show a dedicated error screen
 
 For a full implementation example, see: [Material UI sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
 
