@@ -1,6 +1,7 @@
 package se.warting.inappupdate.compose
 
 import android.app.Activity
+import androidx.activity.compose.LocalActivity
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -39,7 +40,7 @@ public fun NoUi(
 
         is InAppUpdateState.RequiredUpdate -> {
             if (!inAppUpdateState.shouldPrompt) {
-                val activity = (LocalContext.current as? Activity)
+                val activity = LocalActivity.current
                 LaunchedEffect(inAppUpdateState) {
                     activity?.finish()
                 }

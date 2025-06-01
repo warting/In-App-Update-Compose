@@ -1,30 +1,29 @@
 [versions]
-agp = "8.5.0"
-androidx-activity = "1.9.0"
+agp = "8.10.1"
+androidx-activity = "1.10.1"
 androidx-appcompat = "1.7.0"
 androidx-test-espresso = "3.6.1"
 com-google-android-play = "2.1.0"
-detekt-formatting = "1.23.6"
-io-gitlab-arturbosch-detekt = "1.23.6"
-kotlin = "2.0.0"
-logcat = "0.1"
-org-jetbrains-kotlinx = "1.8.1"
-toggles-flow = "0.0.1"
+io-gitlab-arturbosch-detekt = "1.23.8"
+kotlin = "2.1.21"
+logcat = "0.2.1"
+org-jetbrains-kotlinx = "1.10.2"
+toggles-flow = "0.0.3"
 
 [libraries]
 androidx-activity-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-activity-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
-androidx-compose-compose-bom = "androidx.compose:compose-bom:2024.06.00"
+androidx-compose-compose-bom = "androidx.compose:compose-bom:2025.05.01"
 androidx-compose-material = { module = "androidx.compose.material:material" }
 androidx-compose-runtime = { module = "androidx.compose.runtime:runtime" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
 androidx-compose-ui-ui-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-compose-ui-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-ui-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
-androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
-androidx-core-core-ktx = "androidx.core:core-ktx:1.13.1"
-androidx-lifecycle-lifecycle-runtime-ktx = "androidx.lifecycle:lifecycle-runtime-ktx:2.8.2"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.2.1"
+androidx-core-core-ktx = "androidx.core:core-ktx:1.16.0"
+androidx-lifecycle-lifecycle-runtime-ktx = "androidx.lifecycle:lifecycle-runtime-ktx:2.9.0"
 androidx-test-espresso-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "androidx-test-espresso" }
 androidx-test-ext-junit = "androidx.test.ext:junit:1.2.1"
 com-android-tools-build-gradle = { module = "com.android.tools.build:gradle", version.ref = "agp" }
@@ -36,19 +35,18 @@ logcat = { module = "com.squareup.logcat:logcat", version.ref = "logcat" }
 org-jetbrains-kotlin-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 org-jetbrains-kotlinx-kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "org-jetbrains-kotlinx" }
 org-jetbrains-kotlinx-kotlinx-coroutines-play-services = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services", version.ref = "org-jetbrains-kotlinx" }
-org-jetbrains-kotlinx-kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.0"
+org-jetbrains-kotlinx-kotlinx-datetime = "org.jetbrains.kotlinx:kotlinx-datetime:0.6.2"
 se-eelde-toggles-toggles-flow = { module = "se.eelde.toggles:toggles-flow", version.ref = "toggles-flow" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 com-android-library = { id = "com.android.library", version.ref = "agp" }
-com-github-ben-manes-versions = "com.github.ben-manes.versions:0.51.0"
 com-gladed-androidgitversion = "com.gladed.androidgitversion:0.4.14"
-com-vanniktech-maven-publish = "com.vanniktech.maven.publish:0.29.0"
-io-github-gradle-nexus-publish-plugin = "io.github.gradle-nexus.publish-plugin:2.0.0"
-io-gitlab-arturbosch-detekt = "io.gitlab.arturbosch.detekt:1.23.6"
-nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.4"
-org-jetbrains-dokka = "org.jetbrains.dokka:1.9.20"
-org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-org-jetbrains-kotlinx-binary-compatibility-validator = "org.jetbrains.kotlinx.binary-compatibility-validator:0.14.0"
+com-vanniktech-maven-publish = "com.vanniktech.maven.publish:0.32.0"
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+io-github-gradle-nexus-publish-plugin = "io.github.gradle-nexus.publish-plugin:2.0.0"
+io-gitlab-arturbosch-detekt = "io.gitlab.arturbosch.detekt:1.23.8"
+nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:1.0.0"
+org-jetbrains-dokka = "org.jetbrains.dokka:2.0.0"
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+org-jetbrains-kotlinx-binary-compatibility-validator = "org.jetbrains.kotlinx.binary-compatibility-validator:0.17.0"

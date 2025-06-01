@@ -28,7 +28,7 @@ fun AppContent(content: @Composable () -> Unit) {
                     R.string.version_name, context.packageManager.getPackageInfo(
                         context.packageName,
                         0
-                    ).versionName
+                    ).versionName.toString()
                 )
             )
             Text(

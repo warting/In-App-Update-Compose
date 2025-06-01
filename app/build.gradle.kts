@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk = 34
+    compileSdk = 36
 
     namespace = "se.warting.appupdatecompose"
     defaultConfig {
         applicationId = "se.premex.byggappen"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 1
         versionName = "0.0.1"
 

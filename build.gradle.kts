@@ -1,4 +1,3 @@
-import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.Detekt
 import java.io.FileInputStream
 import java.util.Properties
@@ -16,7 +15,6 @@ plugins {
     alias(libs.plugins.com.android.application) apply false
     alias(libs.plugins.com.android.library) apply false
     alias(libs.plugins.org.jetbrains.kotlin.android) apply false
-    alias(libs.plugins.com.github.ben.manes.versions)
     alias(libs.plugins.nl.littlerobots.version.catalog.update)
     alias(libs.plugins.io.gitlab.arturbosch.detekt)
     alias(libs.plugins.io.github.gradle.nexus.publish.plugin)
@@ -72,30 +70,9 @@ tasks.withType<Detekt>().configureEach {
     }
 }
 
-
-fun isNonStable(version: String): Boolean {
-    val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase().contains(it) }
-    val regex = "^[0-9,.v-]+(-r)?$".toRegex()
-    val isStable = stableKeyword || regex.matches(version)
-    return isStable.not()
-}
-
 versionCatalogUpdate {
     sortByKey.set(true)
     keep {
         keepUnusedVersions.set(false)
-        keepUnusedLibraries.set(false)
-        keepUnusedPlugins.set(false)
     }
-}
-
-tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
-    rejectVersionIf {
-        isNonStable(candidate.version) && !isNonStable(currentVersion)
-    }
-}
-
-
-task<Delete>("clean") {
-    delete(rootProject.buildDir)
 }
