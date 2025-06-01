@@ -80,26 +80,6 @@ dependencies {
 
 ## How to use
 
-### Update State Flow Diagram
-
-The library manages updates through different states:
-
-```
-Loading ──► NotAvailable ────────────────────┐
-  │               │                          │
-  │               │                          ▼
-  └─► RequiredUpdate ◄─┐                   Content
-  │     │               │                    ▲
-  │     ▼               │                    │
-  └─► InProgressUpdate ─┘                    │
-  │     │                                    │
-  │     ▼                                    │
-  └─► DownloadedUpdate ───────────────────►Error
-        │                                    ▲
-        │                                    │
-        └───► CompleteUpdate ────────────────┘
-```
-
 ### Using Material UI Implementation
 
 The simplest way is to use the Material UI implementation with `MaterialRequireLatestVersion`. This component provides a complete Material Design UI for handling all update states:
