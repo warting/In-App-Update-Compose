@@ -109,6 +109,34 @@ fun InAppUpdate() {
 
 For a more complex implementation with different update modes, see: [Custom Implementation](app/src/main/java/se/warting/appupdatecompose/MainActivity.kt)
 
+### Core Update State Management
+
+The `rememberInAppUpdateState` function is the core of this library's update functionality. It handles checking for updates, determining their priority, and managing the update flow:
+
+```kotlin
+@Composable
+fun YourCustomImplementation() {
+    val updateState = rememberInAppUpdateState(
+        highPrioritizeUpdates = 4,
+        mediumPrioritizeUpdates = 2,
+        promptIntervalHighPrioritizeUpdateInDays = 1,
+        autoTriggerRequiredUpdates = true
+    )
+    
+    // Use updateState to build your own UI and behavior
+}
+```
+
+Key features of `rememberInAppUpdateState`:
+- Returns an `InAppUpdateState` that represents the current update status
+- Automatically checks for available updates from Google Play
+- Categorizes updates by priority (high, medium, low)
+- Can be configured to automatically trigger required or optional updates
+- Controls how frequently users are prompted about updates
+- Provides actions for starting, completing, or declining updates
+
+Both `MaterialRequireLatestVersion` and `SilentUpdateHandler` use this function internally, but you can also use it directly when you need complete control over your update UI and behavior.
+
 ### Additional Options
 
 The library supports various configurations:
