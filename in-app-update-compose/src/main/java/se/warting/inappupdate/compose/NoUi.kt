@@ -20,7 +20,7 @@ public fun NoUi(
             // CircularProgressIndicator()
             LaunchedEffect(inAppUpdateState) {
                 launch {
-                    inAppUpdateState.onCompleteUpdate(inAppUpdateState.appUpdateResult)
+                    inAppUpdateState.onCompleteUpdate(inAppUpdateState.downloadResult)
                 }
             }
         }

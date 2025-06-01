@@ -38,17 +38,17 @@ public fun MaterialRequireLatestVersion(
         is InAppUpdateState.DownloadedUpdate -> {
             if (inAppUpdateState.isRequiredUpdate) {
                 LaunchedEffect(inAppUpdateState) {
-                    inAppUpdateState.appUpdateResult.completeUpdate()
+                    inAppUpdateState.downloadResult.completeUpdate()
                 }
                 RequiredUpdateDownloadedView {
                     scope.launch {
-                        inAppUpdateState.appUpdateResult.completeUpdate()
+                        inAppUpdateState.downloadResult.completeUpdate()
                     }
                 }
             } else {
                 OptionalUpdateDownloadedView {
                     scope.launch {
-                        inAppUpdateState.appUpdateResult.completeUpdate()
+                        inAppUpdateState.downloadResult.completeUpdate()
                     }
                 }
                 content()

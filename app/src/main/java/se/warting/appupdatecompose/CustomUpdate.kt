@@ -38,7 +38,7 @@ fun CustomUpdate() {
                             Text("Required App update downloaded, ready to install")
                             Button(onClick = {
                                 scope.launch {
-                                    updateState.appUpdateResult.completeUpdate()
+                                    updateState.downloadResult.completeUpdate()
                                 }
                             }) {
                                 Text(text = "Install")
@@ -53,7 +53,7 @@ fun CustomUpdate() {
                             Text("Optional App update downloaded, ready to install")
                             Button(onClick = {
                                 scope.launch {
-                                    updateState.appUpdateResult.completeUpdate()
+                                    updateState.downloadResult.completeUpdate()
                                 }
                             }) {
                                 Text(text = "Install")

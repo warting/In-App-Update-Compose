@@ -148,33 +148,54 @@ internal fun rememberMutableInAppUpdateState(
 
 
 public sealed class InAppUpdateState {
-    public data object Loading : InAppUpdateState()
-    public data object NotAvailable : InAppUpdateState()
+    public abstract val appUpdateResult: AppUpdateResult
+
+    public data object Loading : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = AppUpdateResult.NotAvailable
+    }
+    
+    public data object NotAvailable : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = AppUpdateResult.NotAvailable
+    }
+    
     public data class RequiredUpdate(
         val onStartUpdate: () -> Unit,
         val appUpdateInfo: MyAppUpdateInfo,
         val shouldPrompt: Boolean,
-    ) : InAppUpdateState()
+        private val originalAppUpdateResult: AppUpdateResult.Available
+    ) : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = originalAppUpdateResult
+    }
 
     public data class OptionalUpdate(
         val onStartUpdate: (mode: Mode) -> Unit,
         val onDeclineUpdate: () -> Unit,
         val shouldPrompt: Boolean,
         val appUpdateInfo: MyAppUpdateInfo,
-    ) : InAppUpdateState()
+        private val originalAppUpdateResult: AppUpdateResult.Available
+    ) : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = originalAppUpdateResult
+    }
 
     public data class DownloadedUpdate(
-        val appUpdateResult: AppUpdateResult.Downloaded,
+        val downloadResult: AppUpdateResult.Downloaded,
         val isRequiredUpdate: Boolean,
         val onCompleteUpdate: suspend (AppUpdateResult.Downloaded) -> Unit
-    ) : InAppUpdateState()
+    ) : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = downloadResult
+    }
 
     public data class InProgressUpdate(
         val installState: MyInstallState,
         val isRequiredUpdate: Boolean,
-    ) : InAppUpdateState()
+        private val originalAppUpdateResult: AppUpdateResult.InProgress
+    ) : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = originalAppUpdateResult
+    }
 
-    public data class Error(val exception: Throwable) : InAppUpdateState()
+    public data class Error(val exception: Throwable) : InAppUpdateState() {
+        override val appUpdateResult: AppUpdateResult = AppUpdateResult.NotAvailable
+    }
 }
 
 internal class MutableInAppUpdateState(
@@ -266,20 +287,21 @@ internal class MutableInAppUpdateState(
                 onStartUpdate = { onStartUpdate(updateInfo, Mode.IMMEDIATE) },
                 appUpdateInfo = updateInfo.toAppUpdateInfo(),
                 shouldPrompt = shouldPromptToRequiredUpdate(declined, updateInfo, numberSettings),
+                originalAppUpdateResult = this
             )
         } else {
             InAppUpdateState.OptionalUpdate(
                 onStartUpdate = { mode -> onStartUpdate(updateInfo, mode) },
                 onDeclineUpdate = { onDeclineUpdate(updateInfo) },
                 shouldPrompt = shouldPromptToUpdate(declined, updateInfo, numberSettings),
-                appUpdateInfo = updateInfo.toAppUpdateInfo()
-
+                appUpdateInfo = updateInfo.toAppUpdateInfo(),
+                originalAppUpdateResult = this
             )
         }
 
         is AppUpdateResult.Downloaded -> {
             InAppUpdateState.DownloadedUpdate(
-                appUpdateResult = this,
+                downloadResult = this,
                 isRequiredUpdate = updateMode == Mode.IMMEDIATE,
                 onCompleteUpdate = onCompleteUpdate
             )
@@ -289,6 +311,7 @@ internal class MutableInAppUpdateState(
             InAppUpdateState.InProgressUpdate(
                 installState = installState.toAppInstallState(),
                 isRequiredUpdate = updateMode == Mode.IMMEDIATE,
+                originalAppUpdateResult = this
             )
         }
     }
