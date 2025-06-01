@@ -66,11 +66,14 @@ or if you want more granular control:
 @Composable
 fun InAppUpdate() {
     val updateState = rememberInAppUpdateState()
-    when (val result = updateState.appUpdateResult) {
-        is AppUpdateResult.NotAvailable -> NotAvailable()
-        is AppUpdateResult.Available -> Available(result)
-        is AppUpdateResult.InProgress -> InProgress(result)
-        is AppUpdateResult.Downloaded -> Downloaded(result)
+    when (updateState) {
+        InAppUpdateState.Loading -> Loading()
+        InAppUpdateState.NotAvailable -> NotAvailable()
+        is InAppUpdateState.RequiredUpdate -> RequiredUpdate(updateState)
+        is InAppUpdateState.OptionalUpdate -> OptionalUpdate(updateState)
+        is InAppUpdateState.InProgressUpdate -> InProgress(updateState)
+        is InAppUpdateState.DownloadedUpdate -> Downloaded(updateState)
+        is InAppUpdateState.Error -> Error(updateState)
     }
 }
 ```
