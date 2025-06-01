@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Actualizare gata</string>
     <string name="in_app_update_compose_update_complete_body">Actualizarea este gata pentru instalare</string>
     <string name="in_app_update_compose_update_complete_button">Instalează</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Verificarea pentru actualizări a eșuat</string>
+    <string name="in_app_update_compose_update_from_play_store">Asigurați-vă că aveți instalată cea mai recentă versiune a aplicației</string>
 </resources>

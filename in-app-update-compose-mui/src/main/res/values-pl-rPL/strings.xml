@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Aktualizacja gotowa</string>
     <string name="in_app_update_compose_update_complete_body">Aktualizacja jest gotowa do zainstalowania</string>
     <string name="in_app_update_compose_update_complete_button">Zainstaluj</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Sprawdzanie aktualizacji nie powiodło się</string>
+    <string name="in_app_update_compose_update_from_play_store">Upewnij się, że masz zainstalowaną najnowszą wersję aplikacji</string>
 </resources>

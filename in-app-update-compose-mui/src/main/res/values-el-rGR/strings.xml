@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Ενημέρωση</string>
     <string name="in_app_update_compose_update_progress_title">Λήψη</string>
     <string name="in_app_update_compose_update_progress_body">Λήψη ενημέρωσης…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Ο έλεγχος για ενημερώσεις απέτυχε</string>
     <string name="in_app_update_compose_update_complete_title">Ενημέρωση έτοιμη</string>
     <string name="in_app_update_compose_update_complete_body">Η ενημέρωση είναι έτοιμη για εγκατάσταση</string>
     <string name="in_app_update_compose_update_complete_button">Εγκατάσταση</string>
+    <string name="in_app_update_compose_update_from_play_store">Βεβαιωθείτε ότι έχετε εγκαταστήσει την πιο πρόσφατη έκδοση της εφαρμογής</string>
 </resources>

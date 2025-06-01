@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">업데이트</string>
     <string name="in_app_update_compose_update_progress_title">다운로드 중</string>
     <string name="in_app_update_compose_update_progress_body">…다운로드 중</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">업데이트 확인 실패</string>
     <string name="in_app_update_compose_update_complete_title">업데이트 준비</string>
+    <string name="in_app_update_compose_update_from_play_store">최신 앱이 설치되어 있는지 확인하세요</string>
     <string name="in_app_update_compose_update_complete_body">업데이트를 설치할 준비가 되었습니다.</string>
     <string name="in_app_update_compose_update_complete_button">설치</string>
 </resources>

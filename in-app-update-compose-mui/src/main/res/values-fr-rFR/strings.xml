@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Mise à jour</string>
     <string name="in_app_update_compose_update_progress_title">Téléchargement en cours</string>
     <string name="in_app_update_compose_update_progress_body">Téléchargement de la mise à jour…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">La vérification des mises à jour a échoué</string>
     <string name="in_app_update_compose_update_complete_title">Mise à jour prête</string>
+    <string name="in_app_update_compose_update_from_play_store">Assurez-vous d’avoir installé la dernière version de l’application</string>
     <string name="in_app_update_compose_update_complete_body">La mise à jour est prête à être installée</string>
     <string name="in_app_update_compose_update_complete_button">Installer</string>
 </resources>

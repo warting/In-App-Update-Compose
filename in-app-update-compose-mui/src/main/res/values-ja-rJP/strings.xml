@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">更新</string>
     <string name="in_app_update_compose_update_progress_title">ダウンロード中</string>
     <string name="in_app_update_compose_update_progress_body">アップデートをダウンロード中…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">更新の確認に失敗しました</string>
     <string name="in_app_update_compose_update_complete_title">更新の準備ができました</string>
+    <string name="in_app_update_compose_update_from_play_store">最新のアプリがインストールされていることを確認してください</string>
     <string name="in_app_update_compose_update_complete_body">アップデートをインストールする準備ができました</string>
     <string name="in_app_update_compose_update_complete_button">インストール</string>
 </resources>

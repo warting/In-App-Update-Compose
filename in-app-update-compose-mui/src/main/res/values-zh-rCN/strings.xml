@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">更新</string>
     <string name="in_app_update_compose_update_progress_title">正在下载</string>
     <string name="in_app_update_compose_update_progress_body">正在下载更新…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">检查更新失败</string>
     <string name="in_app_update_compose_update_complete_title">更新已准备好</string>
     <string name="in_app_update_compose_update_complete_body">更新已准备好安装</string>
     <string name="in_app_update_compose_update_complete_button">安装</string>
+    <string name="in_app_update_compose_update_from_play_store">确保您已安装最新版本的应用</string>
 </resources>

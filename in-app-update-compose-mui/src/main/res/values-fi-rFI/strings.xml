@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Päivitä</string>
     <string name="in_app_update_compose_update_progress_title">Ladataan</string>
     <string name="in_app_update_compose_update_progress_body">Ladataan päivitystä…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Päivitysten tarkistus epäonnistui</string>
     <string name="in_app_update_compose_update_complete_title">Päivitys valmis</string>
+    <string name="in_app_update_compose_update_from_play_store">Varmista, että sinulla on uusin sovellus asennettuna</string>
     <string name="in_app_update_compose_update_complete_body">Päivitys on valmis asennettavaksi</string>
     <string name="in_app_update_compose_update_complete_button">Asenna</string>
 </resources>
