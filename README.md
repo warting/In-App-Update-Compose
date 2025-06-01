@@ -3,7 +3,7 @@
 
 # In-App update compose
 
-A way to make in app updates in compose
+A Jetpack Compose implementation for in-app updates in Android applications.
 
 ## How to include in your project
 
@@ -39,7 +39,12 @@ allprojects {
 </p>
 </details>
 
-Add it to your module dependencies:
+## Modules
+
+This library consists of two main modules:
+
+### Core Module
+Basic functionality without any default UI:
 
 ```
 dependencies {
@@ -47,22 +52,38 @@ dependencies {
 }
 ```
 
+### Material UI Module
+Implementation with Material Design components:
+
+```
+dependencies {
+    implementation("se.warting.in-app-update:in-app-update-compose-mui:<latest_version>")
+}
+```
+
 ## How to use
 
-All you need to do is to use `RequireLatestVersion`:
-```
+### Using Material UI Implementation
+
+The simplest way is to use the Material UI implementation with `MaterialRequireLatestVersion`:
+
+```kotlin
 @Composable
 fun MainView() {
-    RequireLatestVersion {
+    MaterialRequireLatestVersion {
+        // Your app content goes here
         Welcome()
     }
 }
 ```
-For a full implementation
-see: [Full sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
 
-or if you want more granular control:
-```
+For a full implementation example, see: [Material UI sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
+
+### Using Core Implementation with Custom UI
+
+For more granular control, you can use the core module and create your own UI:
+
+```kotlin
 @Composable
 fun InAppUpdate() {
     val updateState = rememberInAppUpdateState()
@@ -78,5 +99,34 @@ fun InAppUpdate() {
 }
 ```
 
-For a full implementation
-see: [Full sample](app/src/main/java/se/warting/appupdatecompose/MainActivity.kt)
+For a more complex implementation with different update modes, see: [Custom Implementation](app/src/main/java/se/warting/appupdatecompose/MainActivity.kt)
+
+### Additional Options
+
+The library supports various configurations:
+
+```kotlin
+MaterialRequireLatestVersion(
+    // Custom settings
+    highPrioritizeUpdates = 4,
+    mediumPrioritizeUpdates = 2,
+    promptIntervalHighPrioritizeUpdateInDays = 1,
+    promptIntervalMediumPrioritizeUpdateInDays = 1,
+    promptIntervalLowPrioritizeUpdateInDays = 7,
+) {
+    // Your app content
+}
+```
+
+You can also use the `NoUi` component for completely custom error handling:
+
+```kotlin
+NoUi(
+    errorContent = {
+        // Your custom error UI
+    },
+    content = {
+        // Your normal app content
+    }
+)
+```
