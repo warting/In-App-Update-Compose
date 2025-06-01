@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Update klaar</string>
     <string name="in_app_update_compose_update_complete_body">Update is klaar om te worden geïnstalleerd</string>
     <string name="in_app_update_compose_update_complete_button">Installeren</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Controleren op updates mislukt</string>
+    <string name="in_app_update_compose_update_from_play_store">Zorg ervoor dat u de nieuwste app heeft geïnstalleerd</string>
 </resources>

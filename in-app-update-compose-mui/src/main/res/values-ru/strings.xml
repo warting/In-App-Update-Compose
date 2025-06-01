@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Обновить</string>
     <string name="in_app_update_compose_update_progress_title">Скачивание</string>
     <string name="in_app_update_compose_update_progress_body">Загрузка обновления…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Не удалось проверить наличие обновлений</string>
     <string name="in_app_update_compose_update_complete_title">Обновление готово</string>
+    <string name="in_app_update_compose_update_from_play_store">Убедитесь, что у вас установлена последняя версия приложения</string>
     <string name="in_app_update_compose_update_complete_body">Обновление готово к установке</string>
     <string name="in_app_update_compose_update_complete_button">Установить</string>
 </resources>

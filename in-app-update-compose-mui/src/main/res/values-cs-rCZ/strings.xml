@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Aktualizovat</string>
     <string name="in_app_update_compose_update_progress_title">Stahování</string>
     <string name="in_app_update_compose_update_progress_body">Stahování aktualizace…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Kontrola aktualizací selhala</string>
     <string name="in_app_update_compose_update_complete_title">Aktualizace je připravena</string>
     <string name="in_app_update_compose_update_complete_body">Aktualizace je připravena k instalaci</string>
     <string name="in_app_update_compose_update_complete_button">Instalovat</string>
+    <string name="in_app_update_compose_update_from_play_store">Ujistěte se, že máte nainstalovanou nejnovější verzi aplikace</string>
 </resources>

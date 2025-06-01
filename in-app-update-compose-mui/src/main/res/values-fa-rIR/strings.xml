@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">بروزرسانی آماده است</string>
     <string name="in_app_update_compose_update_complete_body">به روز رسانی آماده نصب است</string>
     <string name="in_app_update_compose_update_complete_button">نصب</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">بررسی به روز رسانی ناموفق بود</string>
+    <string name="in_app_update_compose_update_from_play_store">اطمینان حاصل کنید که آخرین نسخه برنامه را نصب کرده‌اید</string>
 </resources>

@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Оновити</string>
     <string name="in_app_update_compose_update_progress_title">Завантажується</string>
     <string name="in_app_update_compose_update_progress_body">Завантаження оновлення…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Не вдалося перевірити наявність оновлень</string>
     <string name="in_app_update_compose_update_complete_title">Оновлення готове</string>
+    <string name="in_app_update_compose_update_from_play_store">Переконайтеся, що встановлено останню версію додатку</string>
     <string name="in_app_update_compose_update_complete_body">Оновлення готове до встановлення</string>
     <string name="in_app_update_compose_update_complete_button">Інсталювати</string>
 </resources>

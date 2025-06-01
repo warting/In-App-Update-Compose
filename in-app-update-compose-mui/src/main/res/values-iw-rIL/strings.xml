@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">העדכון מוכן</string>
     <string name="in_app_update_compose_update_complete_body">העדכון מוכן להתקנה</string>
     <string name="in_app_update_compose_update_complete_button">להתקין</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">הבדיקה לעדכונים נכשלה</string>
+    <string name="in_app_update_compose_update_from_play_store">ודא שמותקנת אצלך הגרסה העדכנית ביותר של האפליקציה</string>
 </resources>

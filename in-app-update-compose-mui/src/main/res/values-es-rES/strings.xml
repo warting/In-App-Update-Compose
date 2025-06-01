@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Actualizar</string>
     <string name="in_app_update_compose_update_progress_title">Bajando</string>
     <string name="in_app_update_compose_update_progress_body">Descargando actualización…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Error al buscar actualizaciones</string>
     <string name="in_app_update_compose_update_complete_title">Actualización lista</string>
+    <string name="in_app_update_compose_update_from_play_store">Asegúrese de tener instalada la última versión de la aplicación</string>
     <string name="in_app_update_compose_update_complete_body">La actualización está lista para ser instalada</string>
     <string name="in_app_update_compose_update_complete_button">Instalar</string>
 </resources>

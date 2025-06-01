@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Cập nhật đã sẵn sàng</string>
     <string name="in_app_update_compose_update_complete_body">Bản cập nhật đã sẵn sàng để cài đặt</string>
     <string name="in_app_update_compose_update_complete_button">Cài đặt</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Kiểm tra cập nhật không thành công</string>
+    <string name="in_app_update_compose_update_from_play_store">Đảm bảo bạn đã cài đặt phiên bản mới nhất của ứng dụng</string>
 </resources>

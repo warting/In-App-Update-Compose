@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">ажурирање</string>
     <string name="in_app_update_compose_update_progress_title">Преузимање</string>
     <string name="in_app_update_compose_update_progress_body">Преузимање ажурирања…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Провера ажурирања није успела</string>
     <string name="in_app_update_compose_update_complete_title">Ажурирање спремно</string>
     <string name="in_app_update_compose_update_complete_body">Ажурирање је спремно за инсталирање</string>
     <string name="in_app_update_compose_update_complete_button">Инсталирај</string>
+    <string name="in_app_update_compose_update_from_play_store">Уверите се да имате инсталирану најновију верзију апликације</string>
 </resources>

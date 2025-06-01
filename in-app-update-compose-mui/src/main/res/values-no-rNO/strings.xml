@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Oppdater</string>
     <string name="in_app_update_compose_update_progress_title">Laster ned</string>
     <string name="in_app_update_compose_update_progress_body">Laster ned oppdatering…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Kunne ikke søke etter oppdateringer</string>
     <string name="in_app_update_compose_update_complete_title">Oppdatering klar</string>
     <string name="in_app_update_compose_update_complete_body">Oppdateringen er klar til å bli installert</string>
     <string name="in_app_update_compose_update_complete_button">Installer</string>
+    <string name="in_app_update_compose_update_from_play_store">Sørg for at du har installert den nyeste appen</string>
 </resources>

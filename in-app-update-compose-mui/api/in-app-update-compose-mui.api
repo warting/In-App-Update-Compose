@@ -1,44 +1,35 @@
 public final class se/warting/inappupdate/compose/material/ComposableSingletons$LoadingViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/material/ComposableSingletons$LoadingViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$562262910$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/material/ComposableSingletons$OptionalUpdateDownloadedViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/material/ComposableSingletons$OptionalUpdateDownloadedViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
-	public static field lambda-2 Lkotlin/jvm/functions/Function3;
-	public static field lambda-3 Lkotlin/jvm/functions/Function2;
-	public static field lambda-4 Lkotlin/jvm/functions/Function2;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-2$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-3$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function2;
-	public final fun getLambda-4$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda$-1169297792$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-824469630$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$1641977350$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function2;
+	public final fun getLambda$1814391431$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function2;
 }
 
 public final class se/warting/inappupdate/compose/material/ComposableSingletons$RequiredUpdateDownloadedViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/material/ComposableSingletons$RequiredUpdateDownloadedViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-950091150$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/material/ComposableSingletons$UpdateErrorViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/material/ComposableSingletons$UpdateErrorViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
-	public static field lambda-2 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
-	public final fun getLambda-2$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-739105570$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$432509252$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/material/ComposableSingletons$UpdateRequiredViewKt {
 	public static final field INSTANCE Lse/warting/inappupdate/compose/material/ComposableSingletons$UpdateRequiredViewKt;
-	public static field lambda-1 Lkotlin/jvm/functions/Function3;
 	public fun <init> ()V
-	public final fun getLambda-1$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
+	public final fun getLambda$-1831152688$in_app_update_compose_mui_release ()Lkotlin/jvm/functions/Function3;
 }
 
 public final class se/warting/inappupdate/compose/material/MaterialRequireLatestVersionKt {

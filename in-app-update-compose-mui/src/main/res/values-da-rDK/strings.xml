@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Opdatering klar</string>
     <string name="in_app_update_compose_update_complete_body">Opdatering er klar til at blive installeret</string>
     <string name="in_app_update_compose_update_complete_button">Installér</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Kontrol for opdateringer mislykkedes</string>
+    <string name="in_app_update_compose_update_from_play_store">Sørg for, at du har installeret den nyeste version af appen</string>
 </resources>

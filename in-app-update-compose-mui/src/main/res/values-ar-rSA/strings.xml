@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">التحديث جاهز</string>
     <string name="in_app_update_compose_update_complete_body">التحديث جاهز ليتم تثبيته</string>
     <string name="in_app_update_compose_update_complete_button">تثبيت</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">فشل التحقق من وجود تحديثات</string>
+    <string name="in_app_update_compose_update_from_play_store">تأكد من تثبيت أحدث إصدار من التطبيق</string>
 </resources>

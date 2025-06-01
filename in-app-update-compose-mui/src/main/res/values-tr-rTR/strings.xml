@@ -10,4 +10,6 @@
     <string name="in_app_update_compose_update_complete_title">Güncelleme hazır</string>
     <string name="in_app_update_compose_update_complete_body">Güncelleme yüklenmeye hazır</string>
     <string name="in_app_update_compose_update_complete_button">Düzenlemek</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Güncellemeleri kontrol etme başarısız oldu</string>
+    <string name="in_app_update_compose_update_from_play_store">En son uygulamanın yüklü olduğundan emin olun</string>
 </resources>

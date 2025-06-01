@@ -7,7 +7,9 @@
     <string name="in_app_update_compose_update_required_button">Frissítés</string>
     <string name="in_app_update_compose_update_progress_title">Letöltés</string>
     <string name="in_app_update_compose_update_progress_body">…frissítés letöltése</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">A frissítések keresése sikertelen</string>
     <string name="in_app_update_compose_update_complete_title">Frissítés kész</string>
     <string name="in_app_update_compose_update_complete_body">A frissítés telepítésre kész</string>
     <string name="in_app_update_compose_update_complete_button">Telepítés</string>
+    <string name="in_app_update_compose_update_from_play_store">Győződjön meg arról, hogy a legújabb alkalmazás van telepítve</string>
 </resources>

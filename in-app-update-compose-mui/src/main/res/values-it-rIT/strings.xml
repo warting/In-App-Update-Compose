@@ -7,7 +7,10 @@
     <string name="in_app_update_compose_update_required_button">Aggiorna</string>
     <string name="in_app_update_compose_update_progress_title">Scaricamento</string>
     <string name="in_app_update_compose_update_progress_body">Scaricamento aggiornamento…</string>
+    <string name="in_app_update_compose_checking_for_updates_failed">Controllo aggiornamenti fallito</string>
     <string name="in_app_update_compose_update_complete_title">Aggiornamento pronto</string>
+    <string name="in_app_update_compose_update_from_play_store">Assicurati di avere installato l’ultima versione dell’app</string>
     <string name="in_app_update_compose_update_complete_body">L&#8217;aggiornamento è pronto per essere installato</string>
     <string name="in_app_update_compose_update_complete_button">Installa</string>
 </resources>
+
