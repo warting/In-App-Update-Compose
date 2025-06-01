@@ -25,6 +25,28 @@ private class InMemoryInAppUpdateSettings : InAppUpdateSettings {
     }
 }
 
+/**
+ * Creates and remembers an InAppUpdateState to manage in-app update behavior in a Compose UI.
+ *
+ * This is the core function that powers the update checking and state management of the library.
+ * It creates a state object that tracks the current update status of the app and provides
+ * appropriate actions based on the update availability and configuration.
+ *
+ * Use this function when you need direct access to the update state to create a custom UI or
+ * when you want to implement your own update flow logic. For pre-built UI solutions, consider
+ * using [MaterialRequireLatestVersion] or [SilentUpdateHandler] instead.
+ *
+ * @param settings Optional custom InAppUpdateSettings for persisting update decisions
+ * @param appUpdateManager Optional custom AppUpdateManager instance for testing
+ * @param highPrioritizeUpdates Number of updates to consider high priority (default: 4)
+ * @param mediumPrioritizeUpdates Number of updates to consider medium priority (default: 2)
+ * @param promptIntervalHighPrioritizeUpdateInDays Days between prompts for high priority updates (default: 1)
+ * @param promptIntervalMediumPrioritizeUpdateInDays Days between prompts for medium priority updates (default: 1)
+ * @param promptIntervalLowPrioritizeUpdateInDays Days between prompts for low priority updates (default: 7)
+ * @param autoTriggerRequiredUpdates Whether to automatically trigger required updates without user interaction (default: false)
+ * @param autoTriggerOptionalUpdates Whether to automatically trigger optional updates without user interaction (default: false)
+ * @return An [InAppUpdateState] that represents the current state of available updates
+ */
 @Composable
 public fun rememberInAppUpdateState(
     settings: InAppUpdateSettings? = null,

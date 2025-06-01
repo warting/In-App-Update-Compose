@@ -1,9 +1,26 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/se.warting.in-app-update/in-app-update-compose/badge.png)](https://maven-badges.herokuapp.com/maven-central/se.warting.in-app-update/in-app-update-compose)
 [![Crowdin](https://badges.crowdin.net/in-app-update-compose/localized.svg)](https://crowdin.com/project/in-app-update-compose)
+![Platform](https://img.shields.io/badge/platform-android-green.svg)
+[![API](https://img.shields.io/badge/API-21%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 
-# In-App update compose
+# In-App Update Compose
 
-A way to make in app updates in compose
+A Jetpack Compose implementation for managing in-app updates in Android applications. This library makes it easy to integrate Google Play's in-app update API with your Compose UI, providing both ready-to-use UI components and flexible state management.
+
+## Features
+
+- 🔄 Automatic update checking with Google Play
+- 🎨 Material Design UI components for update flows
+- 🔧 Configurable update priorities and prompt intervals
+- 🔕 Silent update option for minimal UI intervention 
+- 🎛️ Custom UI state management support
+- 👥 Multiple implementation approaches to fit your needs
+
+## Requirements
+
+- Android API level 21+ (Android 5.0 Lollipop and higher)
+- Jetpack Compose
+- App published on Google Play Store
 
 ## How to include in your project
 
@@ -39,7 +56,12 @@ allprojects {
 </p>
 </details>
 
-Add it to your module dependencies:
+## Libraries
+
+This library consists of two main libraries:
+
+### Core Module
+Basic functionality without any default UI:
 
 ```
 dependencies {
@@ -47,22 +69,86 @@ dependencies {
 }
 ```
 
+### Material UI Module
+Implementation with Material Design components:
+
+```
+dependencies {
+    implementation("se.warting.in-app-update:in-app-update-compose-mui:<latest_version>")
+}
+```
+
 ## How to use
 
-All you need to do is to use `RequireLatestVersion`:
-```
+### Using Material UI Implementation
+
+The simplest way is to use the Material UI implementation with `MaterialRequireLatestVersion`. This component provides a complete Material Design UI for handling all update states:
+
+```kotlin
 @Composable
 fun MainView() {
-    RequireLatestVersion {
+    MaterialRequireLatestVersion {
+        // Your app content goes here
         Welcome()
     }
 }
 ```
-For a full implementation
-see: [Full sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
 
-or if you want more granular control:
-```
+When using `MaterialRequireLatestVersion`:
+- A loading indicator appears when checking for updates
+- Required updates show a mandatory update screen until the user updates
+- Download progress is displayed for required updates being downloaded
+- Downloaded required updates show an install prompt
+- Optional updates allow continued app usage with normal content
+- Update errors show a dedicated error screen
+
+#### Supported Languages
+
+The Material UI components come with translations for the following languages:
+- English (en) - Default
+- Afrikaans (af-ZA)
+- Arabic (ar-SA)
+- Catalan (ca-ES)
+- Czech (cs-CZ)
+- Danish (da-DK)
+- Dutch (nl-NL)
+- Finnish (fi-FI)
+- French (fr-FR)
+- German (de)
+- Greek (el-GR)
+- Hebrew (iw-IL)
+- Hungarian (hu-HU)
+- Italian (it-IT)
+- Japanese (ja-JP)
+- Korean (ko-KR)
+- Norwegian (no-NO)
+- Polish (pl-PL)
+- Portuguese (Brazil) (pt-BR)
+- Portuguese (Portugal) (pt-PT)
+- Romanian (ro-RO)
+- Russian (ru)
+- Serbian (sr-SP)
+- Spanish (es-ES)
+- Swedish (sv-SE)
+- Turkish (tr-TR)
+- Ukrainian (uk-UA)
+- Vietnamese (vi-VN)
+- Chinese (Simplified) (zh-CN)
+- Chinese (Traditional) (zh-TW)
+
+If you need support for additional languages, please:
+1. Open an issue on GitHub describing the language you need
+2. Or submit a Pull Request with your translation
+
+Translations are managed through [Crowdin](https://crowdin.com/project/in-app-update-compose). You can contribute directly there as well.
+
+For a full implementation example, see: [Material UI sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
+
+### Using Core Implementation with Custom UI
+
+For more granular control, you can use the core module and create your own UI:
+
+```kotlin
 @Composable
 fun InAppUpdate() {
     val updateState = rememberInAppUpdateState()
@@ -78,5 +164,101 @@ fun InAppUpdate() {
 }
 ```
 
-For a full implementation
-see: [Full sample](app/src/main/java/se/warting/appupdatecompose/MainActivity.kt)
+For a more complex implementation with different update modes, see: [Custom Implementation](app/src/main/java/se/warting/appupdatecompose/MainActivity.kt)
+
+### Core Update State Management
+
+The `rememberInAppUpdateState` function is the core of this library's update functionality. It handles checking for updates, determining their priority, and managing the update flow:
+
+```kotlin
+@Composable
+fun YourCustomImplementation() {
+    val updateState = rememberInAppUpdateState(
+        highPrioritizeUpdates = 4,
+        mediumPrioritizeUpdates = 2,
+        promptIntervalHighPrioritizeUpdateInDays = 1,
+        autoTriggerRequiredUpdates = true
+    )
+    
+    // Use updateState to build your own UI and behavior
+}
+```
+
+Key features of `rememberInAppUpdateState`:
+- Returns an `InAppUpdateState` that represents the current update status
+- Automatically checks for available updates from Google Play
+- Categorizes updates by priority (high, medium, low)
+- Can be configured to automatically trigger required or optional updates
+- Controls how frequently users are prompted about updates
+- Provides actions for starting, completing, or declining updates
+
+Both `MaterialRequireLatestVersion` and `SilentUpdateHandler` use this function internally, but you can also use it directly when you need complete control over your update UI and behavior.
+
+### Update Types and Priority
+
+The library categorizes updates into different priority levels:
+
+1. **High Priority Updates** - Critical updates like security patches
+2. **Medium Priority Updates** - Important feature updates
+3. **Low Priority Updates** - Minor enhancements and improvements
+
+You can configure how these updates are handled:
+
+```kotlin
+rememberInAppUpdateState(
+    highPrioritizeUpdates = 4,           // How many updates to consider high priority
+    mediumPrioritizeUpdates = 2,         // How many updates to consider medium priority
+    promptIntervalHighPrioritizeUpdateInDays = 1,    // How often to prompt for high priority
+    promptIntervalMediumPrioritizeUpdateInDays = 3,  // How often to prompt for medium priority
+    promptIntervalLowPrioritizeUpdateInDays = 7      // How often to prompt for low priority
+)
+```
+
+### Additional Options
+
+The library supports various configurations:
+
+```kotlin
+MaterialRequireLatestVersion(
+    // Custom settings
+    highPrioritizeUpdates = 4,
+    mediumPrioritizeUpdates = 2,
+    promptIntervalHighPrioritizeUpdateInDays = 1,
+    promptIntervalMediumPrioritizeUpdateInDays = 1,
+    promptIntervalLowPrioritizeUpdateInDays = 7,
+) {
+    // Your app content
+}
+```
+
+### Silent Update Handling
+
+For applications that want updates to happen silently in the background with minimal UI intervention, use the `SilentUpdateHandler`:
+
+```kotlin
+SilentUpdateHandler(
+    errorContent = {
+        // Your custom error UI
+    },
+    content = {
+        // Your normal app content
+    }
+)
+```
+
+When using `SilentUpdateHandler`:
+- Updates are checked for and processed automatically in the background
+- Your regular content is shown during normal operation and for optional updates
+- Required updates that are declined will cause the app to close
+- No UI is shown during update loading or download processes
+- Your error content is only shown if update checking fails
+
+> **Note:** The previous `NoUi` component is deprecated and has been replaced by `SilentUpdateHandler`
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.

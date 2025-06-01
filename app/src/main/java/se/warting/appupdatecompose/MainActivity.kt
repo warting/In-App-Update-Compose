@@ -7,7 +7,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.collectAsState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import se.eelde.toggles.flow.TogglesImpl
-import se.warting.inappupdate.compose.NoUi
+import se.warting.inappupdate.compose.SilentUpdateHandler
 import se.warting.inappupdate.compose.material.MaterialRequireLatestVersion
 
 enum class UpdateMode {
@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
-                UpdateMode.OPINIATED_NO_UI -> NoUi(errorContent = {
+                UpdateMode.OPINIATED_NO_UI -> SilentUpdateHandler(errorContent = {
                     AppContent {
                         Text("Material update failed")
                     }
