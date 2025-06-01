@@ -102,6 +102,46 @@ When using `MaterialRequireLatestVersion`:
 - Optional updates allow continued app usage with normal content
 - Update errors show a dedicated error screen
 
+#### Supported Languages
+
+The Material UI components come with translations for the following languages:
+- English (en) - Default
+- Afrikaans (af-ZA)
+- Arabic (ar-SA)
+- Catalan (ca-ES)
+- Czech (cs-CZ)
+- Danish (da-DK)
+- Dutch (nl-NL)
+- Finnish (fi-FI)
+- French (fr-FR)
+- German (de)
+- Greek (el-GR)
+- Hebrew (iw-IL)
+- Hungarian (hu-HU)
+- Italian (it-IT)
+- Japanese (ja-JP)
+- Korean (ko-KR)
+- Norwegian (no-NO)
+- Polish (pl-PL)
+- Portuguese (Brazil) (pt-BR)
+- Portuguese (Portugal) (pt-PT)
+- Romanian (ro-RO)
+- Russian (ru)
+- Serbian (sr-SP)
+- Spanish (es-ES)
+- Swedish (sv-SE)
+- Turkish (tr-TR)
+- Ukrainian (uk-UA)
+- Vietnamese (vi-VN)
+- Chinese (Simplified) (zh-CN)
+- Chinese (Traditional) (zh-TW)
+
+If you need support for additional languages, please:
+1. Open an issue on GitHub describing the language you need
+2. Or submit a Pull Request with your translation
+
+Translations are managed through [Crowdin](https://crowdin.com/project/in-app-update-compose). You can contribute directly there as well.
+
 For a full implementation example, see: [Material UI sample](app/src/main/java/se/warting/appupdatecompose/UiActivity.kt)
 
 ### Using Core Implementation with Custom UI
