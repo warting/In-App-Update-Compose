@@ -118,10 +118,12 @@ MaterialRequireLatestVersion(
 }
 ```
 
-You can also use the `NoUi` component for completely custom error handling:
+### Silent Update Handling
+
+For applications that want updates to happen silently in the background with minimal UI intervention, use the `SilentUpdateHandler`:
 
 ```kotlin
-NoUi(
+SilentUpdateHandler(
     errorContent = {
         // Your custom error UI
     },
@@ -130,3 +132,13 @@ NoUi(
     }
 )
 ```
+
+When using `SilentUpdateHandler`:
+- Updates are checked for and processed automatically in the background
+- Your regular content is shown during normal operation and for optional updates
+- Required updates that are declined will cause the app to close
+- No UI is shown during update loading or download processes
+- Your error content is only shown if update checking fails
+
+> **Note:** The previous `NoUi` component is deprecated and has been replaced by `SilentUpdateHandler`
+
