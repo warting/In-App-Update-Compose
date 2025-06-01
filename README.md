@@ -56,7 +56,7 @@ allprojects {
 </p>
 </details>
 
-## Modules
+## Libraries
 
 This library consists of two main modules:
 
@@ -239,3 +239,6 @@ When using `SilentUpdateHandler`:
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
