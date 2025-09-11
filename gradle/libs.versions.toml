@@ -1,6 +1,6 @@
 [versions]
 agp = "8.12.2"
-androidx-activity = "1.10.1"
+androidx-activity = "1.11.0"
 androidx-appcompat = "1.7.1"
 androidx-test-espresso = "3.7.0"
 com-google-android-play = "2.1.0"
