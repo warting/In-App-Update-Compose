@@ -1,5 +1,5 @@
 [versions]
-agp = "8.12.2"
+agp = "9.0.0"
 androidx-activity = "1.11.0"
 androidx-appcompat = "1.7.1"
 androidx-test-espresso = "3.7.0"
